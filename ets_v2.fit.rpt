@@ -1,0 +1,785 @@
+Fitter report for ets_v2
+Sat Nov 28 11:46:03 2020
+Quartus II Version 8.1 Build 163 10/28/2008 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Fitter Summary
+  3. Fitter Settings
+  4. Fitter Device Options
+  5. Input Pins
+  6. Output Pins
+  7. All Package Pins
+  8. Control Signals
+  9. Global & Other Fast Signals
+ 10. Carry Chains
+ 11. Cascade Chains
+ 12. Non-Global High Fan-Out Signals
+ 13. LAB
+ 14. Local Routing Interconnect
+ 15. LAB External Interconnect
+ 16. Row Interconnect
+ 17. LAB Column Interconnect
+ 18. LAB Column Interconnect
+ 19. Fitter Resource Usage Summary
+ 20. Fitter Resource Utilization by Entity
+ 21. Delay Chain Summary
+ 22. Pin-Out File
+ 23. Fitter Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2008 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------+
+; Fitter Summary                                                  ;
++-----------------------+-----------------------------------------+
+; Fitter Status         ; Successful - Sat Nov 28 11:46:03 2020   ;
+; Quartus II Version    ; 8.1 Build 163 10/28/2008 SJ Web Edition ;
+; Revision Name         ; ets_v2                                  ;
+; Top-level Entity Name ; ets_v2                                  ;
+; Family                ; FLEX10K                                 ;
+; Device                ; EPF10K20TC144-3                         ;
+; Timing Models         ; Final                                   ;
+; Total logic elements  ; 601 / 1,152 ( 52 % )                    ;
+; Total pins            ; 82 / 102 ( 80 % )                       ;
+; Total memory bits     ; 0 / 12,288 ( 0 % )                      ;
++-----------------------+-----------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------+
+; Fitter Settings                                                                                      ;
++------------------------------------------------------------+--------------------+--------------------+
+; Option                                                     ; Setting            ; Default Value      ;
++------------------------------------------------------------+--------------------+--------------------+
+; Device                                                     ; EPF10K20TC144-3    ;                    ;
+; Use smart compilation                                      ; Off                ; Off                ;
+; Use TimeQuest Timing Analyzer                              ; Off                ; Off                ;
+; Router Timing Optimization Level                           ; Normal             ; Normal             ;
+; Placement Effort Multiplier                                ; 1.0                ; 1.0                ;
+; Router Effort Multiplier                                   ; 1.0                ; 1.0                ;
+; Optimize Timing                                            ; Normal compilation ; Normal compilation ;
+; Optimize Timing for ECOs                                   ; Off                ; Off                ;
+; Regenerate full fit report during ECO compiles             ; Off                ; Off                ;
+; Optimize IOC Register Placement for Timing                 ; On                 ; On                 ;
+; Limit to One Fitting Attempt                               ; Off                ; Off                ;
+; Final Placement Optimizations                              ; Automatically      ; Automatically      ;
+; Fitter Aggressive Routability Optimizations                ; Automatically      ; Automatically      ;
+; Fitter Initial Placement Seed                              ; 1                  ; 1                  ;
+; Slow Slew Rate                                             ; Off                ; Off                ;
+; Auto Global Memory Control Signals                         ; Off                ; Off                ;
+; Logic Cell Insertion - Individual Logic Cells              ; On                 ; On                 ;
+; Logic Cell Insertion - I/Os Fed By Carry or Cascade Chains ; On                 ; On                 ;
+; Fitter Effort                                              ; Auto Fit           ; Auto Fit           ;
+; Auto Global Clock                                          ; On                 ; On                 ;
+; Auto Global Output Enable                                  ; On                 ; On                 ;
+; Auto Global Register Control Signals                       ; On                 ; On                 ;
++------------------------------------------------------------+--------------------+--------------------+
+
+
++-------------------------------------------------------------------------+
+; Fitter Device Options                                                   ;
++----------------------------------------------+--------------------------+
+; Option                                       ; Setting                  ;
++----------------------------------------------+--------------------------+
+; Enable user-supplied start-up clock (CLKUSR) ; Off                      ;
+; Enable device-wide reset (DEV_CLRn)          ; Off                      ;
+; Enable device-wide output enable (DEV_OE)    ; Off                      ;
+; Enable INIT_DONE output                      ; Off                      ;
+; Configuration scheme                         ; Passive Serial           ;
+; nWS, nRS, nCS, CS                            ; Unreserved               ;
+; RDYnBUSY                                     ; Unreserved               ;
+; Data[7..1]                                   ; Unreserved               ;
+; Reserve all unused pins                      ; As output driving ground ;
+; Base pin-out file on sameframe device        ; Off                      ;
++----------------------------------------------+--------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Input Pins                                                                                                                                     ;
++----------------+-------+-----+------+---------+--------+--------------+-------------------------+---------------+---------------+--------------+
+; Name           ; Pin # ; Row ; Col. ; Fan-Out ; Global ; I/O Register ; Use Local Routing Input ; Power Up High ; Single-Pin CE ; I/O Standard ;
++----------------+-------+-----+------+---------+--------+--------------+-------------------------+---------------+---------------+--------------+
+; digit[1]       ; 125   ; --  ; --   ; 9       ; no     ; no           ; no                      ; no            ; no            ; TTL          ;
+; digit[2]       ; 27    ;  E  ; --   ; 11      ; no     ; no           ; no                      ; no            ; no            ; TTL          ;
+; digit[3]       ; 54    ; --  ; --   ; 12      ; no     ; no           ; no                      ; no            ; no            ; TTL          ;
+; digit[6]       ; 128   ; --  ; 13   ; 6       ; no     ; no           ; no                      ; no            ; no            ; TTL          ;
+; digit[7]       ; 43    ; --  ; 18   ; 6       ; no     ; no           ; no                      ; no            ; no            ; TTL          ;
+; digit[8]       ; 135   ; --  ; 19   ; 7       ; no     ; no           ; no                      ; no            ; no            ; TTL          ;
+; digit[9]       ; 46    ; --  ; 17   ; 7       ; no     ; no           ; no                      ; no            ; no            ; TTL          ;
+; digit[4]       ; 56    ; --  ; --   ; 12      ; no     ; no           ; no                      ; no            ; no            ; TTL          ;
+; digit[5]       ; 44    ; --  ; 18   ; 12      ; no     ; no           ; no                      ; no            ; no            ; TTL          ;
+; exit           ; 126   ; --  ; --   ; 122     ; no     ; no           ; no                      ; no            ; no            ; TTL          ;
+; next           ; 122   ; --  ; 13   ; 3       ; no     ; no           ; no                      ; no            ; no            ; TTL          ;
+; confirm        ; 120   ; --  ; 8    ; 6       ; no     ; no           ; no                      ; no            ; no            ; TTL          ;
+; cancel         ; 140   ; --  ; 22   ; 2       ; no     ; no           ; no                      ; no            ; no            ; TTL          ;
+; reset          ; 124   ; --  ; --   ; 106     ; no     ; no           ; no                      ; no            ; no            ; TTL          ;
+; clock          ; 55    ; --  ; --   ; 110     ; yes    ; no           ; no                      ; no            ; no            ; TTL          ;
+; TC_balance[0]  ; 65    ; --  ; 9    ; 3       ; no     ; no           ; no                      ; no            ; no            ; TTL          ;
+; TC_balance[1]  ; 62    ; --  ; 11   ; 3       ; no     ; no           ; no                      ; no            ; no            ; TTL          ;
+; TC_balance[2]  ; 114   ; --  ; 4    ; 3       ; no     ; no           ; no                      ; no            ; no            ; TTL          ;
+; TC_balance[3]  ; 97    ;  B  ; --   ; 3       ; no     ; no           ; no                      ; no            ; no            ; TTL          ;
+; TC_balance[4]  ; 69    ; --  ; 6    ; 3       ; no     ; no           ; no                      ; no            ; no            ; TTL          ;
+; TC_balance[5]  ; 118   ; --  ; 6    ; 4       ; no     ; no           ; no                      ; no            ; no            ; TTL          ;
+; TC_balance[6]  ; 70    ; --  ; 5    ; 4       ; no     ; no           ; no                      ; no            ; no            ; TTL          ;
+; TC_balance[7]  ; 19    ;  D  ; --   ; 4       ; no     ; no           ; no                      ; no            ; no            ; TTL          ;
+; TC_balance[8]  ; 37    ; --  ; 23   ; 4       ; no     ; no           ; no                      ; no            ; no            ; TTL          ;
+; TC_balance[9]  ; 132   ; --  ; 16   ; 4       ; no     ; no           ; no                      ; no            ; no            ; TTL          ;
+; TC_balance[10] ; 138   ; --  ; 21   ; 4       ; no     ; no           ; no                      ; no            ; no            ; TTL          ;
+; TC_balance[11] ; 49    ; --  ; 14   ; 4       ; no     ; no           ; no                      ; no            ; no            ; TTL          ;
+; TC_balance[12] ; 51    ; --  ; 14   ; 4       ; no     ; no           ; no                      ; no            ; no            ; TTL          ;
+; TC_balance[13] ; 48    ; --  ; 15   ; 4       ; no     ; no           ; no                      ; no            ; no            ; TTL          ;
+; TC_balance[14] ; 36    ; --  ; 24   ; 4       ; no     ; no           ; no                      ; no            ; no            ; TTL          ;
+; TC_balance[15] ; 141   ; --  ; 23   ; 4       ; no     ; no           ; no                      ; no            ; no            ; TTL          ;
++----------------+-------+-----+------+---------+--------+--------------+-------------------------+---------------+---------------+--------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Output Pins                                                                                                                                                                                     ;
++---------------------+-------+-----+------+--------------+--------------------------+---------------+----------------+---------------+---------------+------------+---------------+--------------+
+; Name                ; Pin # ; Row ; Col. ; I/O Register ; Use Local Routing Output ; Power Up High ; Slow Slew Rate ; Single-Pin OE ; Single-Pin CE ; Open Drain ; TRI Primitive ; I/O Standard ;
++---------------------+-------+-----+------+--------------+--------------------------+---------------+----------------+---------------+---------------+------------+---------------+--------------+
+; message_no[0]       ; 142   ; --  ; 24   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; message_no[1]       ; 63    ; --  ; 10   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; message_no[2]       ; 18    ;  D  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; message_no[3]       ; 144   ;  A  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; balance[0]          ; 133   ; --  ; 18   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; balance[1]          ; 23    ;  D  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; balance[2]          ; 21    ;  D  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; balance[3]          ; 131   ; --  ; 16   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; balance[4]          ; 26    ;  E  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; balance[5]          ; 41    ; --  ; 20   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; balance[6]          ; 22    ;  D  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; balance[7]          ; 47    ; --  ; 16   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; balance[8]          ; 9     ;  B  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; balance[9]          ; 28    ;  E  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; balance[10]         ; 39    ; --  ; 21   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; balance[11]         ; 17    ;  D  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; balance[12]         ; 38    ; --  ; 22   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; balance[13]         ; 136   ; --  ; 20   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; balance[14]         ; 20    ;  D  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; balance[15]         ; 11    ;  C  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; ticket_out          ; 130   ; --  ; 15   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; total_fare[0]       ; 95    ;  B  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; total_fare[1]       ; 88    ;  D  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; total_fare[2]       ; 68    ; --  ; 7    ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; total_fare[3]       ; 91    ;  C  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; total_fare[4]       ; 99    ;  B  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; total_fare[5]       ; 89    ;  C  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; total_fare[6]       ; 14    ;  C  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; total_fare[7]       ; 92    ;  C  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; total_fare[8]       ; 64    ; --  ; 9    ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; total_fare[9]       ; 100   ;  A  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; total_fare[10]      ; 13    ;  C  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; total_fare[11]      ; 12    ;  C  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; total_fare[12]      ; 7     ;  A  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; total_fare[13]      ; 101   ;  A  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; total_fare[14]      ; 8     ;  A  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; total_fare[15]      ; 87    ;  E  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; wanted_ticket[0]    ; 29    ;  E  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; wanted_ticket[1]    ; 98    ;  B  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; wanted_ticket[2]    ; 96    ;  B  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; wanted_ticket[3]    ; 10    ;  B  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; route[0]            ; 137   ; --  ; 20   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; route[1]            ; 79    ;  F  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; route[2]            ; 86    ;  E  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; route[3]            ; 72    ; --  ; 3    ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; available_ticket[0] ; 31    ;  F  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; available_ticket[1] ; 30    ;  F  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; available_ticket[2] ; 33    ;  F  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; available_ticket[3] ; 78    ;  F  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; available_ticket[4] ; 109   ;  A  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
+; available_ticket[5] ; 80    ;  F  ; --   ; no           ; no                       ; no            ; no             ; no            ; no            ; no         ; no            ; TTL          ;
++---------------------+-------+-----+------+--------------+--------------------------+---------------+----------------+---------------+---------------+------------+---------------+--------------+
+
+
++--------------------------------------------+
+; All Package Pins                           ;
++-------+---------------------+--------------+
+; Pin # ; Usage               ; I/O Standard ;
++-------+---------------------+--------------+
+; 1     ; #TCK                ;              ;
+; 2     ; ^CONF_DONE          ;              ;
+; 3     ; ^nCEO               ;              ;
+; 4     ; #TDO                ;              ;
+; 5     ; VCC_IO              ;              ;
+; 6     ; VCC_INT             ;              ;
+; 7     ; total_fare[12]      ; TTL          ;
+; 8     ; total_fare[14]      ; TTL          ;
+; 9     ; balance[8]          ; TTL          ;
+; 10    ; wanted_ticket[3]    ; TTL          ;
+; 11    ; balance[15]         ; TTL          ;
+; 12    ; total_fare[11]      ; TTL          ;
+; 13    ; total_fare[10]      ; TTL          ;
+; 14    ; total_fare[6]       ; TTL          ;
+; 15    ; GND_IO              ;              ;
+; 16    ; GND_INT             ;              ;
+; 17    ; balance[11]         ; TTL          ;
+; 18    ; message_no[2]       ; TTL          ;
+; 19    ; TC_balance[7]       ; TTL          ;
+; 20    ; balance[14]         ; TTL          ;
+; 21    ; balance[2]          ; TTL          ;
+; 22    ; balance[6]          ; TTL          ;
+; 23    ; balance[1]          ; TTL          ;
+; 24    ; VCC_IO              ;              ;
+; 25    ; VCC_INT             ;              ;
+; 26    ; balance[4]          ; TTL          ;
+; 27    ; digit[2]            ; TTL          ;
+; 28    ; balance[9]          ; TTL          ;
+; 29    ; wanted_ticket[0]    ; TTL          ;
+; 30    ; available_ticket[1] ; TTL          ;
+; 31    ; available_ticket[0] ; TTL          ;
+; 32    ; GND*                ;              ;
+; 33    ; available_ticket[2] ; TTL          ;
+; 34    ; #TMS                ;              ;
+; 35    ; ^nSTATUS            ;              ;
+; 36    ; TC_balance[14]      ; TTL          ;
+; 37    ; TC_balance[8]       ; TTL          ;
+; 38    ; balance[12]         ; TTL          ;
+; 39    ; balance[10]         ; TTL          ;
+; 40    ; GND_IO              ;              ;
+; 41    ; balance[5]          ; TTL          ;
+; 42    ; GND*                ;              ;
+; 43    ; digit[7]            ; TTL          ;
+; 44    ; digit[5]            ; TTL          ;
+; 45    ; VCC_IO              ;              ;
+; 46    ; digit[9]            ; TTL          ;
+; 47    ; balance[7]          ; TTL          ;
+; 48    ; TC_balance[13]      ; TTL          ;
+; 49    ; TC_balance[11]      ; TTL          ;
+; 50    ; GND_IO              ;              ;
+; 51    ; TC_balance[12]      ; TTL          ;
+; 52    ; VCC_INT             ;              ;
+; 53    ; VCC_INT             ;              ;
+; 54    ; digit[3]            ; TTL          ;
+; 55    ; clock               ; TTL          ;
+; 56    ; digit[4]            ; TTL          ;
+; 57    ; GND_INT             ;              ;
+; 58    ; GND_INT             ;              ;
+; 59    ; GND*                ;              ;
+; 60    ; GND*                ;              ;
+; 61    ; VCC_IO              ;              ;
+; 62    ; TC_balance[1]       ; TTL          ;
+; 63    ; message_no[1]       ; TTL          ;
+; 64    ; total_fare[8]       ; TTL          ;
+; 65    ; TC_balance[0]       ; TTL          ;
+; 66    ; GND_IO              ;              ;
+; 67    ; GND*                ;              ;
+; 68    ; total_fare[2]       ; TTL          ;
+; 69    ; TC_balance[4]       ; TTL          ;
+; 70    ; TC_balance[6]       ; TTL          ;
+; 71    ; VCC_IO              ;              ;
+; 72    ; route[3]            ; TTL          ;
+; 73    ; GND*                ;              ;
+; 74    ; ^nCONFIG            ;              ;
+; 75    ; VCC_INT             ;              ;
+; 76    ; ^MSEL1              ;              ;
+; 77    ; ^MSEL0              ;              ;
+; 78    ; available_ticket[3] ; TTL          ;
+; 79    ; route[1]            ; TTL          ;
+; 80    ; available_ticket[5] ; TTL          ;
+; 81    ; GND*                ;              ;
+; 82    ; GND*                ;              ;
+; 83    ; GND*                ;              ;
+; 84    ; GND_INT             ;              ;
+; 85    ; GND_IO              ;              ;
+; 86    ; route[2]            ; TTL          ;
+; 87    ; total_fare[15]      ; TTL          ;
+; 88    ; total_fare[1]       ; TTL          ;
+; 89    ; total_fare[5]       ; TTL          ;
+; 90    ; GND*                ;              ;
+; 91    ; total_fare[3]       ; TTL          ;
+; 92    ; total_fare[7]       ; TTL          ;
+; 93    ; VCC_INT             ;              ;
+; 94    ; VCC_IO              ;              ;
+; 95    ; total_fare[0]       ; TTL          ;
+; 96    ; wanted_ticket[2]    ; TTL          ;
+; 97    ; TC_balance[3]       ; TTL          ;
+; 98    ; wanted_ticket[1]    ; TTL          ;
+; 99    ; total_fare[4]       ; TTL          ;
+; 100   ; total_fare[9]       ; TTL          ;
+; 101   ; total_fare[13]      ; TTL          ;
+; 102   ; GND*                ;              ;
+; 103   ; GND_INT             ;              ;
+; 104   ; GND_IO              ;              ;
+; 105   ; #TDI                ;              ;
+; 106   ; ^nCE                ;              ;
+; 107   ; ^DCLK               ;              ;
+; 108   ; ^DATA0              ;              ;
+; 109   ; available_ticket[4] ; TTL          ;
+; 110   ; GND*                ;              ;
+; 111   ; GND*                ;              ;
+; 112   ; GND*                ;              ;
+; 113   ; GND*                ;              ;
+; 114   ; TC_balance[2]       ; TTL          ;
+; 115   ; VCC_IO              ;              ;
+; 116   ; GND*                ;              ;
+; 117   ; GND*                ;              ;
+; 118   ; TC_balance[5]       ; TTL          ;
+; 119   ; GND*                ;              ;
+; 120   ; confirm             ; TTL          ;
+; 121   ; GND*                ;              ;
+; 122   ; next                ; TTL          ;
+; 123   ; VCC_INT             ;              ;
+; 124   ; reset               ; TTL          ;
+; 125   ; digit[1]            ; TTL          ;
+; 126   ; exit                ; TTL          ;
+; 127   ; GND_INT             ;              ;
+; 128   ; digit[6]            ; TTL          ;
+; 129   ; GND_IO              ;              ;
+; 130   ; ticket_out          ; TTL          ;
+; 131   ; balance[3]          ; TTL          ;
+; 132   ; TC_balance[9]       ; TTL          ;
+; 133   ; balance[0]          ; TTL          ;
+; 134   ; VCC_IO              ;              ;
+; 135   ; digit[8]            ; TTL          ;
+; 136   ; balance[13]         ; TTL          ;
+; 137   ; route[0]            ; TTL          ;
+; 138   ; TC_balance[10]      ; TTL          ;
+; 139   ; GND_IO              ;              ;
+; 140   ; cancel              ; TTL          ;
+; 141   ; TC_balance[15]      ; TTL          ;
+; 142   ; message_no[0]       ; TTL          ;
+; 143   ; GND*                ;              ;
+; 144   ; message_no[3]       ; TTL          ;
++-------+---------------------+--------------+
+
+
++-------------------------------------------------------------------------+
+; Control Signals                                                         ;
++-----------------------+---------+---------+--------------+--------------+
+; Name                  ; Pin #   ; Fan-Out ; Usage        ; Global Usage ;
++-----------------------+---------+---------+--------------+--------------+
+; available_ticket1~105 ; LC6_F24 ; 6       ; Clock enable ; Non-global   ;
+; available_ticket2~165 ; LC2_F23 ; 6       ; Clock enable ; Non-global   ;
+; available_ticket3~87  ; LC1_F15 ; 6       ; Clock enable ; Non-global   ;
+; available_ticket9~85  ; LC4_F12 ; 6       ; Clock enable ; Non-global   ;
+; available_ticket5~85  ; LC7_F10 ; 6       ; Clock enable ; Non-global   ;
+; available_ticket8~85  ; LC8_F9  ; 6       ; Clock enable ; Non-global   ;
+; available_ticket7~85  ; LC3_F7  ; 6       ; Clock enable ; Non-global   ;
+; available_ticket4~85  ; LC5_F6  ; 6       ; Clock enable ; Non-global   ;
+; available_ticket6~85  ; LC2_F2  ; 6       ; Clock enable ; Non-global   ;
+; clock                 ; 55      ; 110     ; Clock        ; Pin          ;
++-----------------------+---------+---------+--------------+--------------+
+
+
++-------------------------------------+
+; Global & Other Fast Signals         ;
++----------+-------+---------+--------+
+; Name     ; Pin # ; Fan-Out ; Global ;
++----------+-------+---------+--------+
+; digit[1] ; 125   ; 9       ; no     ;
+; digit[3] ; 54    ; 12      ; no     ;
+; digit[4] ; 56    ; 12      ; no     ;
+; exit     ; 126   ; 122     ; no     ;
+; reset    ; 124   ; 106     ; no     ;
+; clock    ; 55    ; 110     ; yes    ;
++----------+-------+---------+--------+
+
+
++---------------------------------------------+
+; Carry Chains                                ;
++--------------------+------------------------+
+; Carry Chain Length ; Number of Carry Chains ;
++--------------------+------------------------+
+; 0                  ; 0                      ;
+; 1                  ; 0                      ;
+; 2                  ; 0                      ;
+; 3                  ; 0                      ;
+; 4                  ; 0                      ;
+; 5                  ; 0                      ;
+; 6                  ; 2                      ;
+; 7                  ; 0                      ;
+; 8                  ; 0                      ;
+; 9                  ; 0                      ;
+; 10                 ; 0                      ;
+; 11                 ; 0                      ;
+; 12                 ; 0                      ;
+; 13                 ; 0                      ;
+; 14                 ; 0                      ;
+; 15                 ; 0                      ;
+; 16                 ; 1                      ;
++--------------------+------------------------+
+
+
++----------------+
+; Cascade Chains ;
++--------+-------+
+; Length ; Count ;
++--------+-------+
+; 2      ; 7     ;
++--------+-------+
+
+
++--------------------------------------------------------------------------+
+; Non-Global High Fan-Out Signals                                          ;
++----------------------------------------------------------------+---------+
+; Name                                                           ; Fan-Out ;
++----------------------------------------------------------------+---------+
+; exit                                                           ; 122     ;
+; reset                                                          ; 106     ;
+; route~297                                                      ; 47      ;
+; route~296                                                      ; 43      ;
+; Selector7~288                                                  ; 27      ;
+; Selector3~275                                                  ; 26      ;
+; Selector6~1035                                                 ; 26      ;
+; Selector2~999                                                  ; 26      ;
+; Selector5~1095                                                 ; 24      ;
+; Selector4~1119                                                 ; 24      ;
+; route~298                                                      ; 22      ;
+; route~299                                                      ; 21      ;
+; route[0]~292                                                   ; 19      ;
+; route[1]~293                                                   ; 18      ;
+; route~300                                                      ; 17      ;
+; stateB~286                                                     ; 17      ;
+; ticket_out~27                                                  ; 17      ;
+; Mux6~373                                                       ; 16      ;
+; balance~864                                                    ; 16      ;
+; lpm_mult:Mult3|multcore:mult_core|_~165                        ; 15      ;
+; lpm_mult:Mult3|multcore:mult_core|_~159                        ; 15      ;
+; lpm_mult:Mult3|multcore:mult_core|_~161                        ; 15      ;
+; lpm_mult:Mult3|multcore:mult_core|_~155                        ; 15      ;
+; available_ticket3~94                                           ; 15      ;
+; WideOr0~64                                                     ; 14      ;
+; lpm_mult:Mult3|multcore:mult_core|_~163                        ; 14      ;
+; lpm_mult:Mult3|multcore:mult_core|_~164                        ; 14      ;
+; lpm_mult:Mult3|multcore:mult_core|_~162                        ; 14      ;
+; lpm_mult:Mult3|multcore:mult_core|_~160                        ; 14      ;
+; stateA~74                                                      ; 13      ;
+; digit[3]                                                       ; 12      ;
+; digit[5]                                                       ; 12      ;
+; digit[4]                                                       ; 12      ;
+; digit[2]                                                       ; 11      ;
+; Selector1~1098                                                 ; 11      ;
+; lpm_add_sub:Add3|addcore:adder|a_csnbuffer:result_node|cout[3] ; 11      ;
+; lpm_mult:Mult5|multcore:mult_core|_~115                        ; 11      ;
+; lpm_mult:Mult5|multcore:mult_core|_~114                        ; 11      ;
+; lpm_mult:Mult3|multcore:mult_core|_~156                        ; 11      ;
+; Selector0~1005                                                 ; 11      ;
+; lpm_add_sub:Add3|addcore:adder|a_csnbuffer:result_node|cout[5] ; 11      ;
+; lpm_add_sub:Add3|addcore:adder|a_csnbuffer:result_node|cout[4] ; 11      ;
+; lpm_add_sub:Add3|addcore:adder|a_csnbuffer:result_node|cout[1] ; 11      ;
+; lpm_add_sub:Add3|addcore:adder|a_csnbuffer:result_node|cout[2] ; 11      ;
+; lpm_mult:Mult3|multcore:mult_core|_~157                        ; 10      ;
+; lpm_mult:Mult5|multcore:mult_core|_~112                        ; 10      ;
+; stateD~104                                                     ; 10      ;
+; lpm_add_sub:Add3|addcore:adder|unreg_res_node[6]~16            ; 10      ;
+; Selector4~1111                                                 ; 10      ;
+; route~301                                                      ; 9       ;
++----------------------------------------------------------------+---------+
+
+
++-------------------------------------------+
+; LAB                                       ;
++--------------------------+----------------+
+; Number of Logic Elements ; Number of LABs ;
++--------------------------+----------------+
+; 0                        ; 58             ;
+; 1                        ; 3              ;
+; 2                        ; 3              ;
+; 3                        ; 1              ;
+; 4                        ; 1              ;
+; 5                        ; 3              ;
+; 6                        ; 5              ;
+; 7                        ; 20             ;
+; 8                        ; 50             ;
++--------------------------+----------------+
+
+
++----------------------------------------------+
+; Local Routing Interconnect                   ;
++-----------------------------+----------------+
+; Local Routing Interconnects ; Number of LABs ;
++-----------------------------+----------------+
+; 0                           ; 65             ;
+; 1                           ; 9              ;
+; 2                           ; 6              ;
+; 3                           ; 10             ;
+; 4                           ; 11             ;
+; 5                           ; 9              ;
+; 6                           ; 7              ;
+; 7                           ; 19             ;
+; 8                           ; 8              ;
++-----------------------------+----------------+
+
+
++---------------------------------------------+
+; LAB External Interconnect                   ;
++----------------------------+----------------+
+; LAB External Interconnects ; Number of LABs ;
++----------------------------+----------------+
+; 0 - 1                      ; 58             ;
+; 2 - 3                      ; 4              ;
+; 4 - 5                      ; 3              ;
+; 6 - 7                      ; 6              ;
+; 8 - 9                      ; 17             ;
+; 10 - 11                    ; 16             ;
+; 12 - 13                    ; 13             ;
+; 14 - 15                    ; 16             ;
+; 16 - 17                    ; 9              ;
+; 18 - 19                    ; 1              ;
+; 20 - 21                    ; 1              ;
++----------------------------+----------------+
+
+
++------------------------------------------------------------------------------------------+
+; Row Interconnect                                                                         ;
++-------+---------------------+-----------------------------+------------------------------+
+; Row   ; Interconnect Used   ; Left Half Interconnect Used ; Right Half Interconnect Used ;
++-------+---------------------+-----------------------------+------------------------------+
+;  A    ;  25 / 96 ( 26 % )   ;  0 / 48 ( 0 % )             ;  31 / 48 ( 65 % )            ;
+;  B    ;  16 / 96 ( 17 % )   ;  4 / 48 ( 8 % )             ;  22 / 48 ( 46 % )            ;
+;  C    ;  68 / 96 ( 71 % )   ;  27 / 48 ( 56 % )           ;  41 / 48 ( 85 % )            ;
+;  D    ;  53 / 96 ( 55 % )   ;  18 / 48 ( 38 % )           ;  39 / 48 ( 81 % )            ;
+;  E    ;  4 / 96 ( 4 % )     ;  1 / 48 ( 2 % )             ;  12 / 48 ( 25 % )            ;
+;  F    ;  59 / 96 ( 61 % )   ;  36 / 48 ( 75 % )           ;  34 / 48 ( 71 % )            ;
+; Total ;  225 / 576 ( 39 % ) ;  86 / 288 ( 30 % )          ;  179 / 288 ( 62 % )          ;
++-------+---------------------+-----------------------------+------------------------------+
+
+
++-----------------------------+
+; LAB Column Interconnect     ;
++-------+---------------------+
+; Col.  ; Interconnect Used   ;
++-------+---------------------+
+; 1     ;  3 / 24 ( 13 % )    ;
+; 2     ;  1 / 24 ( 4 % )     ;
+; 3     ;  8 / 24 ( 33 % )    ;
+; 4     ;  2 / 24 ( 8 % )     ;
+; 5     ;  4 / 24 ( 17 % )    ;
+; 6     ;  7 / 24 ( 29 % )    ;
+; 7     ;  1 / 24 ( 4 % )     ;
+; 8     ;  2 / 24 ( 8 % )     ;
+; 9     ;  7 / 24 ( 29 % )    ;
+; 10    ;  2 / 24 ( 8 % )     ;
+; 11    ;  5 / 24 ( 21 % )    ;
+; 12    ;  2 / 24 ( 8 % )     ;
+; 13    ;  10 / 24 ( 42 % )   ;
+; 14    ;  6 / 24 ( 25 % )    ;
+; 15    ;  11 / 24 ( 46 % )   ;
+; 16    ;  12 / 24 ( 50 % )   ;
+; 17    ;  9 / 24 ( 38 % )    ;
+; 18    ;  9 / 24 ( 38 % )    ;
+; 19    ;  2 / 24 ( 8 % )     ;
+; 20    ;  6 / 24 ( 25 % )    ;
+; 21    ;  6 / 24 ( 25 % )    ;
+; 22    ;  10 / 24 ( 42 % )   ;
+; 23    ;  6 / 24 ( 25 % )    ;
+; 24    ;  8 / 24 ( 33 % )    ;
+; Total ;  139 / 576 ( 24 % ) ;
++-------+---------------------+
+
+
++---------------------------+
+; LAB Column Interconnect   ;
++-------+-------------------+
+; Col.  ; Interconnect Used ;
++-------+-------------------+
+; 1     ;  0 / 24 ( 0 % )   ;
+; Total ;  0 / 24 ( 0 % )   ;
++-------+-------------------+
+
+
++----------------------------------------------------------+
+; Fitter Resource Usage Summary                            ;
++-----------------------------------+----------------------+
+; Resource                          ; Usage                ;
++-----------------------------------+----------------------+
+; Total logic elements              ; 601 / 1,152 ( 52 % ) ;
+; Registers                         ; 110 / 1,152 ( 10 % ) ;
+; Logic elements in carry chains    ; 28                   ;
+; User inserted logic elements      ; 0                    ;
+; I/O pins                          ; 82 / 102 ( 80 % )    ;
+;     -- Clock pins                 ; 2                    ;
+;     -- Dedicated input pins       ; 5 / 4 ( 125 % )      ;
+; Global signals                    ; 1                    ;
+; EABs                              ; 0 / 6 ( 0 % )        ;
+; Total memory bits                 ; 0 / 12,288 ( 0 % )   ;
+; Total RAM block bits              ; 0 / 12,288 ( 0 % )   ;
+; Maximum fan-out node              ; exit                 ;
+; Maximum fan-out                   ; 122                  ;
+; Highest non-global fan-out signal ; exit                 ;
+; Highest non-global fan-out        ; 122                  ;
+; Total fan-out                     ; 2264                 ;
+; Average fan-out                   ; 3.31                 ;
++-----------------------------------+----------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fitter Resource Utilization by Entity                                                                                                                                                                                                                     ;
++------------------------------------+-------------+--------------+-------------+------+--------------+-------------------+------------------+-----------------+------------+----------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node         ; Logic Cells ; LC Registers ; Memory Bits ; Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                                            ; Library Name ;
++------------------------------------+-------------+--------------+-------------+------+--------------+-------------------+------------------+-----------------+------------+----------------------------------------------------------------+--------------+
+; |ets_v2                            ; 601 (486)   ; 110          ; 0           ; 82   ; 491 (376)    ; 0 (0)             ; 110 (110)        ; 28 (0)          ; 0 (0)      ; |ets_v2                                                        ; work         ;
+;    |lpm_add_sub:Add1|              ; 7 (0)       ; 0            ; 0           ; 0    ; 7 (0)        ; 0 (0)             ; 0 (0)            ; 6 (0)           ; 0 (0)      ; |ets_v2|lpm_add_sub:Add1                                       ; work         ;
+;       |addcore:adder|              ; 7 (2)       ; 0            ; 0           ; 0    ; 7 (2)        ; 0 (0)             ; 0 (0)            ; 6 (1)           ; 0 (0)      ; |ets_v2|lpm_add_sub:Add1|addcore:adder                         ; work         ;
+;          |a_csnbuffer:result_node| ; 5 (5)       ; 0            ; 0           ; 0    ; 5 (5)        ; 0 (0)             ; 0 (0)            ; 5 (5)           ; 0 (0)      ; |ets_v2|lpm_add_sub:Add1|addcore:adder|a_csnbuffer:result_node ; work         ;
+;    |lpm_add_sub:Add2|              ; 16 (0)      ; 0            ; 0           ; 0    ; 16 (0)       ; 0 (0)             ; 0 (0)            ; 16 (0)          ; 0 (0)      ; |ets_v2|lpm_add_sub:Add2                                       ; work         ;
+;       |addcore:adder|              ; 16 (1)      ; 0            ; 0           ; 0    ; 16 (1)       ; 0 (0)             ; 0 (0)            ; 16 (1)          ; 0 (0)      ; |ets_v2|lpm_add_sub:Add2|addcore:adder                         ; work         ;
+;          |a_csnbuffer:result_node| ; 15 (15)     ; 0            ; 0           ; 0    ; 15 (15)      ; 0 (0)             ; 0 (0)            ; 15 (15)         ; 0 (0)      ; |ets_v2|lpm_add_sub:Add2|addcore:adder|a_csnbuffer:result_node ; work         ;
+;    |lpm_add_sub:Add3|              ; 6 (0)       ; 0            ; 0           ; 0    ; 6 (0)        ; 0 (0)             ; 0 (0)            ; 6 (0)           ; 0 (0)      ; |ets_v2|lpm_add_sub:Add3                                       ; work         ;
+;       |addcore:adder|              ; 6 (1)       ; 0            ; 0           ; 0    ; 6 (1)        ; 0 (0)             ; 0 (0)            ; 6 (1)           ; 0 (0)      ; |ets_v2|lpm_add_sub:Add3|addcore:adder                         ; work         ;
+;          |a_csnbuffer:result_node| ; 5 (5)       ; 0            ; 0           ; 0    ; 5 (5)        ; 0 (0)             ; 0 (0)            ; 5 (5)           ; 0 (0)      ; |ets_v2|lpm_add_sub:Add3|addcore:adder|a_csnbuffer:result_node ; work         ;
+;    |lpm_mult:Mult0|                ; 12 (0)      ; 0            ; 0           ; 0    ; 12 (0)       ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ets_v2|lpm_mult:Mult0                                         ; work         ;
+;       |multcore:mult_core|         ; 12 (12)     ; 0            ; 0           ; 0    ; 12 (12)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ets_v2|lpm_mult:Mult0|multcore:mult_core                      ; work         ;
+;    |lpm_mult:Mult2|                ; 9 (0)       ; 0            ; 0           ; 0    ; 9 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ets_v2|lpm_mult:Mult2                                         ; work         ;
+;       |multcore:mult_core|         ; 9 (9)       ; 0            ; 0           ; 0    ; 9 (9)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ets_v2|lpm_mult:Mult2|multcore:mult_core                      ; work         ;
+;    |lpm_mult:Mult3|                ; 29 (0)      ; 0            ; 0           ; 0    ; 29 (0)       ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ets_v2|lpm_mult:Mult3                                         ; work         ;
+;       |multcore:mult_core|         ; 29 (29)     ; 0            ; 0           ; 0    ; 29 (29)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ets_v2|lpm_mult:Mult3|multcore:mult_core                      ; work         ;
+;    |lpm_mult:Mult4|                ; 7 (0)       ; 0            ; 0           ; 0    ; 7 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ets_v2|lpm_mult:Mult4                                         ; work         ;
+;       |multcore:mult_core|         ; 7 (7)       ; 0            ; 0           ; 0    ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ets_v2|lpm_mult:Mult4|multcore:mult_core                      ; work         ;
+;    |lpm_mult:Mult5|                ; 22 (0)      ; 0            ; 0           ; 0    ; 22 (0)       ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ets_v2|lpm_mult:Mult5                                         ; work         ;
+;       |multcore:mult_core|         ; 22 (22)     ; 0            ; 0           ; 0    ; 22 (22)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ets_v2|lpm_mult:Mult5|multcore:mult_core                      ; work         ;
+;    |lpm_mult:Mult7|                ; 7 (0)       ; 0            ; 0           ; 0    ; 7 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ets_v2|lpm_mult:Mult7                                         ; work         ;
+;       |multcore:mult_core|         ; 7 (7)       ; 0            ; 0           ; 0    ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |ets_v2|lpm_mult:Mult7|multcore:mult_core                      ; work         ;
++------------------------------------+-------------+--------------+-------------+------+--------------+-------------------+------------------+-----------------+------------+----------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------+
+; Delay Chain Summary                          ;
++---------------------+----------+-------------+
+; Name                ; Pin Type ; Pad to Core ;
++---------------------+----------+-------------+
+; digit[1]            ; Input    ; OFF         ;
+; digit[2]            ; Input    ; OFF         ;
+; digit[3]            ; Input    ; OFF         ;
+; digit[6]            ; Input    ; OFF         ;
+; digit[7]            ; Input    ; OFF         ;
+; digit[8]            ; Input    ; OFF         ;
+; digit[9]            ; Input    ; OFF         ;
+; digit[4]            ; Input    ; OFF         ;
+; digit[5]            ; Input    ; OFF         ;
+; exit                ; Input    ; OFF         ;
+; next                ; Input    ; OFF         ;
+; confirm             ; Input    ; OFF         ;
+; cancel              ; Input    ; OFF         ;
+; reset               ; Input    ; OFF         ;
+; clock               ; Input    ; OFF         ;
+; TC_balance[0]       ; Input    ; OFF         ;
+; TC_balance[1]       ; Input    ; OFF         ;
+; TC_balance[2]       ; Input    ; OFF         ;
+; TC_balance[3]       ; Input    ; OFF         ;
+; TC_balance[4]       ; Input    ; OFF         ;
+; TC_balance[5]       ; Input    ; OFF         ;
+; TC_balance[6]       ; Input    ; OFF         ;
+; TC_balance[7]       ; Input    ; OFF         ;
+; TC_balance[8]       ; Input    ; OFF         ;
+; TC_balance[9]       ; Input    ; OFF         ;
+; TC_balance[10]      ; Input    ; OFF         ;
+; TC_balance[11]      ; Input    ; OFF         ;
+; TC_balance[12]      ; Input    ; OFF         ;
+; TC_balance[13]      ; Input    ; OFF         ;
+; TC_balance[14]      ; Input    ; OFF         ;
+; TC_balance[15]      ; Input    ; OFF         ;
+; message_no[0]       ; Output   ; OFF         ;
+; message_no[1]       ; Output   ; OFF         ;
+; message_no[2]       ; Output   ; OFF         ;
+; message_no[3]       ; Output   ; OFF         ;
+; balance[0]          ; Output   ; OFF         ;
+; balance[1]          ; Output   ; OFF         ;
+; balance[2]          ; Output   ; OFF         ;
+; balance[3]          ; Output   ; OFF         ;
+; balance[4]          ; Output   ; OFF         ;
+; balance[5]          ; Output   ; OFF         ;
+; balance[6]          ; Output   ; OFF         ;
+; balance[7]          ; Output   ; OFF         ;
+; balance[8]          ; Output   ; OFF         ;
+; balance[9]          ; Output   ; OFF         ;
+; balance[10]         ; Output   ; OFF         ;
+; balance[11]         ; Output   ; OFF         ;
+; balance[12]         ; Output   ; OFF         ;
+; balance[13]         ; Output   ; OFF         ;
+; balance[14]         ; Output   ; OFF         ;
+; balance[15]         ; Output   ; OFF         ;
+; ticket_out          ; Output   ; OFF         ;
+; total_fare[0]       ; Output   ; OFF         ;
+; total_fare[1]       ; Output   ; OFF         ;
+; total_fare[2]       ; Output   ; OFF         ;
+; total_fare[3]       ; Output   ; OFF         ;
+; total_fare[4]       ; Output   ; OFF         ;
+; total_fare[5]       ; Output   ; OFF         ;
+; total_fare[6]       ; Output   ; OFF         ;
+; total_fare[7]       ; Output   ; OFF         ;
+; total_fare[8]       ; Output   ; OFF         ;
+; total_fare[9]       ; Output   ; OFF         ;
+; total_fare[10]      ; Output   ; OFF         ;
+; total_fare[11]      ; Output   ; OFF         ;
+; total_fare[12]      ; Output   ; OFF         ;
+; total_fare[13]      ; Output   ; OFF         ;
+; total_fare[14]      ; Output   ; OFF         ;
+; total_fare[15]      ; Output   ; OFF         ;
+; wanted_ticket[0]    ; Output   ; OFF         ;
+; wanted_ticket[1]    ; Output   ; OFF         ;
+; wanted_ticket[2]    ; Output   ; OFF         ;
+; wanted_ticket[3]    ; Output   ; OFF         ;
+; route[0]            ; Output   ; OFF         ;
+; route[1]            ; Output   ; OFF         ;
+; route[2]            ; Output   ; OFF         ;
+; route[3]            ; Output   ; OFF         ;
+; available_ticket[0] ; Output   ; OFF         ;
+; available_ticket[1] ; Output   ; OFF         ;
+; available_ticket[2] ; Output   ; OFF         ;
+; available_ticket[3] ; Output   ; OFF         ;
+; available_ticket[4] ; Output   ; OFF         ;
+; available_ticket[5] ; Output   ; OFF         ;
++---------------------+----------+-------------+
+
+
++--------------+
+; Pin-Out File ;
++--------------+
+The pin-out file can be found in E:/Nafis/Altera Quartus/quartus_files/electronic_ticket_seller2/ets_v2.pin.
+
+
++-----------------+
+; Fitter Messages ;
++-----------------+
+Info: *******************************************************************
+Info: Running Quartus II Fitter
+    Info: Version 8.1 Build 163 10/28/2008 SJ Web Edition
+    Info: Processing started: Sat Nov 28 11:45:57 2020
+Info: Command: quartus_fit --read_settings_files=off --write_settings_files=off ets_v2 -c ets_v2
+Info: Selected device EPF10K20TC144-3 for design "ets_v2"
+Warning: Feature SignalProbe is not available with your current license
+Info: Fitter is using the Classic Timing Analyzer
+Info: Timing requirements not specified -- optimizing circuit to achieve the following default global requirements
+    Info: Assuming a global fmax requirement of 1000 MHz
+    Info: Not setting a global tsu requirement
+    Info: Not setting a global tco requirement
+    Info: Not setting a global tpd requirement
+Info: Inserted 1 logic cells in first fitting attempt
+Info: Started fitting attempt 1 on Sat Nov 28 2020 at 11:45:59
+Info: Fitter placement preparation operations beginning
+Info: Fitter placement preparation operations ending: elapsed time is 00:00:01
+Info: Fitter placement operations beginning
+Info: Fitter placement operations ending: elapsed time is 00:00:02
+Info: Fitter routing operations beginning
+Info: Fitter routing operations ending: elapsed time is 00:00:00
+Info: Quartus II Fitter was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 191 megabytes
+    Info: Processing ended: Sat Nov 28 11:46:03 2020
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:04
+
+

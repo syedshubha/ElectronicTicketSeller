@@ -1,0 +1,905 @@
+Classic Timing Analyzer report for ets_v2
+Sat Nov 28 11:46:07 2020
+Quartus II Version 8.1 Build 163 10/28/2008 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Clock Setup: 'clock'
+  6. tsu
+  7. tco
+  8. th
+  9. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2008 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                          ;
++------------------------------+-------+---------------+----------------------------------+--------------------------+----------------------+------------+----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time                      ; From                     ; To                   ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+-------+---------------+----------------------------------+--------------------------+----------------------+------------+----------+--------------+
+; Worst-case tsu               ; N/A   ; None          ; 79.700 ns                        ; digit[8]                 ; available_ticket4[2] ; --         ; clock    ; 0            ;
+; Worst-case tco               ; N/A   ; None          ; 12.500 ns                        ; available_ticket[4]~reg0 ; available_ticket[4]  ; clock      ; --       ; 0            ;
+; Worst-case th                ; N/A   ; None          ; 0.600 ns                         ; reset                    ; available_ticket1[2] ; --         ; clock    ; 0            ;
+; Clock Setup: 'clock'         ; N/A   ; None          ; 12.84 MHz ( period = 77.900 ns ) ; wanted_ticket[0]~reg0    ; available_ticket4[2] ; clock      ; clock    ; 0            ;
+; Total number of failed paths ;       ;               ;                                  ;                          ;                      ;            ;          ; 0            ;
++------------------------------+-------+---------------+----------------------------------+--------------------------+----------------------+------------+----------+--------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                           ;
++---------------------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                              ; Setting            ; From ; To ; Entity Name ;
++---------------------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                                         ; EPF10K20TC144-3    ;      ;    ;             ;
+; Timing Models                                                       ; Final              ;      ;    ;             ;
+; Default hold multicycle                                             ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains                           ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                              ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                                      ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                                    ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                               ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements                             ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                                    ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                                ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                                       ; Off                ;      ;    ;             ;
+; Minimum Core Junction Temperature                                   ; 0                  ;      ;    ;             ;
+; Maximum Core Junction Temperature                                   ; 85                 ;      ;    ;             ;
+; Number of source nodes to report per destination node               ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                               ; 10                 ;      ;    ;             ;
+; Number of paths to report                                           ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                                        ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                              ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                                          ; Off                ;      ;    ;             ;
+; Perform Multicorner Analysis                                        ; Off                ;      ;    ;             ;
+; Reports the worst-case path for each clock domain and analysis      ; Off                ;      ;    ;             ;
+; Removes common clock path pessimism (CCPP) during slack computation ; Off                ;      ;    ;             ;
+; Output I/O Timing Endpoint                                          ; Near End           ;      ;    ;             ;
++---------------------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; clock           ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'clock'                                                                                                                                                                                                                                         ;
++-----------------------------------------+-----------------------------------------------------+-----------------------+--------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack                                   ; Actual fmax (period)                                ; From                  ; To                       ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-----------------------------------------+-----------------------------------------------------+-----------------------+--------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A                                     ; 12.84 MHz ( period = 77.900 ns )                    ; wanted_ticket[0]~reg0 ; available_ticket6[0]     ; clock      ; clock    ; None                        ; None                      ; 75.700 ns               ;
+; N/A                                     ; 12.84 MHz ( period = 77.900 ns )                    ; wanted_ticket[0]~reg0 ; available_ticket4[0]     ; clock      ; clock    ; None                        ; None                      ; 75.700 ns               ;
+; N/A                                     ; 12.84 MHz ( period = 77.900 ns )                    ; wanted_ticket[0]~reg0 ; available_ticket6[3]     ; clock      ; clock    ; None                        ; None                      ; 75.700 ns               ;
+; N/A                                     ; 12.84 MHz ( period = 77.900 ns )                    ; wanted_ticket[0]~reg0 ; available_ticket4[3]     ; clock      ; clock    ; None                        ; None                      ; 75.700 ns               ;
+; N/A                                     ; 12.84 MHz ( period = 77.900 ns )                    ; wanted_ticket[0]~reg0 ; available_ticket6[5]     ; clock      ; clock    ; None                        ; None                      ; 75.700 ns               ;
+; N/A                                     ; 12.84 MHz ( period = 77.900 ns )                    ; wanted_ticket[0]~reg0 ; available_ticket4[5]     ; clock      ; clock    ; None                        ; None                      ; 75.700 ns               ;
+; N/A                                     ; 12.84 MHz ( period = 77.900 ns )                    ; wanted_ticket[0]~reg0 ; available_ticket6[4]     ; clock      ; clock    ; None                        ; None                      ; 75.700 ns               ;
+; N/A                                     ; 12.84 MHz ( period = 77.900 ns )                    ; wanted_ticket[0]~reg0 ; available_ticket4[4]     ; clock      ; clock    ; None                        ; None                      ; 75.700 ns               ;
+; N/A                                     ; 12.84 MHz ( period = 77.900 ns )                    ; wanted_ticket[0]~reg0 ; available_ticket6[1]     ; clock      ; clock    ; None                        ; None                      ; 75.700 ns               ;
+; N/A                                     ; 12.84 MHz ( period = 77.900 ns )                    ; wanted_ticket[0]~reg0 ; available_ticket4[1]     ; clock      ; clock    ; None                        ; None                      ; 75.700 ns               ;
+; N/A                                     ; 12.84 MHz ( period = 77.900 ns )                    ; wanted_ticket[0]~reg0 ; available_ticket6[2]     ; clock      ; clock    ; None                        ; None                      ; 75.700 ns               ;
+; N/A                                     ; 12.84 MHz ( period = 77.900 ns )                    ; wanted_ticket[0]~reg0 ; available_ticket4[2]     ; clock      ; clock    ; None                        ; None                      ; 75.700 ns               ;
+; N/A                                     ; 12.85 MHz ( period = 77.800 ns )                    ; wanted_ticket[0]~reg0 ; available_ticket7[0]     ; clock      ; clock    ; None                        ; None                      ; 75.600 ns               ;
+; N/A                                     ; 12.85 MHz ( period = 77.800 ns )                    ; wanted_ticket[0]~reg0 ; available_ticket7[3]     ; clock      ; clock    ; None                        ; None                      ; 75.600 ns               ;
+; N/A                                     ; 12.85 MHz ( period = 77.800 ns )                    ; wanted_ticket[0]~reg0 ; available_ticket7[5]     ; clock      ; clock    ; None                        ; None                      ; 75.600 ns               ;
+; N/A                                     ; 12.85 MHz ( period = 77.800 ns )                    ; wanted_ticket[0]~reg0 ; available_ticket7[4]     ; clock      ; clock    ; None                        ; None                      ; 75.600 ns               ;
+; N/A                                     ; 12.85 MHz ( period = 77.800 ns )                    ; wanted_ticket[0]~reg0 ; available_ticket7[1]     ; clock      ; clock    ; None                        ; None                      ; 75.600 ns               ;
+; N/A                                     ; 12.85 MHz ( period = 77.800 ns )                    ; wanted_ticket[0]~reg0 ; available_ticket7[2]     ; clock      ; clock    ; None                        ; None                      ; 75.600 ns               ;
+; N/A                                     ; 12.87 MHz ( period = 77.700 ns )                    ; wanted_ticket[0]~reg0 ; available_ticket8[0]     ; clock      ; clock    ; None                        ; None                      ; 75.500 ns               ;
+; N/A                                     ; 12.87 MHz ( period = 77.700 ns )                    ; wanted_ticket[0]~reg0 ; available_ticket8[3]     ; clock      ; clock    ; None                        ; None                      ; 75.500 ns               ;
+; N/A                                     ; 12.87 MHz ( period = 77.700 ns )                    ; wanted_ticket[0]~reg0 ; available_ticket8[5]     ; clock      ; clock    ; None                        ; None                      ; 75.500 ns               ;
+; N/A                                     ; 12.87 MHz ( period = 77.700 ns )                    ; wanted_ticket[0]~reg0 ; available_ticket8[4]     ; clock      ; clock    ; None                        ; None                      ; 75.500 ns               ;
+; N/A                                     ; 12.87 MHz ( period = 77.700 ns )                    ; wanted_ticket[0]~reg0 ; available_ticket8[1]     ; clock      ; clock    ; None                        ; None                      ; 75.500 ns               ;
+; N/A                                     ; 12.87 MHz ( period = 77.700 ns )                    ; wanted_ticket[0]~reg0 ; available_ticket8[2]     ; clock      ; clock    ; None                        ; None                      ; 75.500 ns               ;
+; N/A                                     ; 12.89 MHz ( period = 77.600 ns )                    ; wanted_ticket[0]~reg0 ; available_ticket5[0]     ; clock      ; clock    ; None                        ; None                      ; 75.400 ns               ;
+; N/A                                     ; 12.89 MHz ( period = 77.600 ns )                    ; wanted_ticket[0]~reg0 ; available_ticket5[3]     ; clock      ; clock    ; None                        ; None                      ; 75.400 ns               ;
+; N/A                                     ; 12.89 MHz ( period = 77.600 ns )                    ; wanted_ticket[0]~reg0 ; available_ticket5[5]     ; clock      ; clock    ; None                        ; None                      ; 75.400 ns               ;
+; N/A                                     ; 12.89 MHz ( period = 77.600 ns )                    ; wanted_ticket[0]~reg0 ; available_ticket5[4]     ; clock      ; clock    ; None                        ; None                      ; 75.400 ns               ;
+; N/A                                     ; 12.89 MHz ( period = 77.600 ns )                    ; wanted_ticket[0]~reg0 ; available_ticket5[1]     ; clock      ; clock    ; None                        ; None                      ; 75.400 ns               ;
+; N/A                                     ; 12.89 MHz ( period = 77.600 ns )                    ; wanted_ticket[0]~reg0 ; available_ticket5[2]     ; clock      ; clock    ; None                        ; None                      ; 75.400 ns               ;
+; N/A                                     ; 12.92 MHz ( period = 77.400 ns )                    ; wanted_ticket[0]~reg0 ; available_ticket9[0]     ; clock      ; clock    ; None                        ; None                      ; 75.200 ns               ;
+; N/A                                     ; 12.92 MHz ( period = 77.400 ns )                    ; wanted_ticket[0]~reg0 ; available_ticket2[0]     ; clock      ; clock    ; None                        ; None                      ; 75.200 ns               ;
+; N/A                                     ; 12.92 MHz ( period = 77.400 ns )                    ; wanted_ticket[0]~reg0 ; available_ticket1[0]     ; clock      ; clock    ; None                        ; None                      ; 75.200 ns               ;
+; N/A                                     ; 12.92 MHz ( period = 77.400 ns )                    ; wanted_ticket[0]~reg0 ; available_ticket9[3]     ; clock      ; clock    ; None                        ; None                      ; 75.200 ns               ;
+; N/A                                     ; 12.92 MHz ( period = 77.400 ns )                    ; wanted_ticket[0]~reg0 ; available_ticket2[3]     ; clock      ; clock    ; None                        ; None                      ; 75.200 ns               ;
+; N/A                                     ; 12.92 MHz ( period = 77.400 ns )                    ; wanted_ticket[0]~reg0 ; available_ticket1[3]     ; clock      ; clock    ; None                        ; None                      ; 75.200 ns               ;
+; N/A                                     ; 12.92 MHz ( period = 77.400 ns )                    ; wanted_ticket[0]~reg0 ; available_ticket9[5]     ; clock      ; clock    ; None                        ; None                      ; 75.200 ns               ;
+; N/A                                     ; 12.92 MHz ( period = 77.400 ns )                    ; wanted_ticket[0]~reg0 ; available_ticket2[5]     ; clock      ; clock    ; None                        ; None                      ; 75.200 ns               ;
+; N/A                                     ; 12.92 MHz ( period = 77.400 ns )                    ; wanted_ticket[0]~reg0 ; available_ticket1[5]     ; clock      ; clock    ; None                        ; None                      ; 75.200 ns               ;
+; N/A                                     ; 12.92 MHz ( period = 77.400 ns )                    ; wanted_ticket[0]~reg0 ; available_ticket9[4]     ; clock      ; clock    ; None                        ; None                      ; 75.200 ns               ;
+; N/A                                     ; 12.92 MHz ( period = 77.400 ns )                    ; wanted_ticket[0]~reg0 ; available_ticket2[4]     ; clock      ; clock    ; None                        ; None                      ; 75.200 ns               ;
+; N/A                                     ; 12.92 MHz ( period = 77.400 ns )                    ; wanted_ticket[0]~reg0 ; available_ticket1[4]     ; clock      ; clock    ; None                        ; None                      ; 75.200 ns               ;
+; N/A                                     ; 12.92 MHz ( period = 77.400 ns )                    ; wanted_ticket[0]~reg0 ; available_ticket9[1]     ; clock      ; clock    ; None                        ; None                      ; 75.200 ns               ;
+; N/A                                     ; 12.92 MHz ( period = 77.400 ns )                    ; wanted_ticket[0]~reg0 ; available_ticket2[1]     ; clock      ; clock    ; None                        ; None                      ; 75.200 ns               ;
+; N/A                                     ; 12.92 MHz ( period = 77.400 ns )                    ; wanted_ticket[0]~reg0 ; available_ticket1[1]     ; clock      ; clock    ; None                        ; None                      ; 75.200 ns               ;
+; N/A                                     ; 12.92 MHz ( period = 77.400 ns )                    ; wanted_ticket[0]~reg0 ; available_ticket9[2]     ; clock      ; clock    ; None                        ; None                      ; 75.200 ns               ;
+; N/A                                     ; 12.92 MHz ( period = 77.400 ns )                    ; wanted_ticket[0]~reg0 ; available_ticket2[2]     ; clock      ; clock    ; None                        ; None                      ; 75.200 ns               ;
+; N/A                                     ; 12.92 MHz ( period = 77.400 ns )                    ; wanted_ticket[0]~reg0 ; available_ticket1[2]     ; clock      ; clock    ; None                        ; None                      ; 75.200 ns               ;
+; N/A                                     ; 13.00 MHz ( period = 76.900 ns )                    ; wanted_ticket[0]~reg0 ; available_ticket3[0]     ; clock      ; clock    ; None                        ; None                      ; 74.700 ns               ;
+; N/A                                     ; 13.00 MHz ( period = 76.900 ns )                    ; wanted_ticket[0]~reg0 ; available_ticket3[3]     ; clock      ; clock    ; None                        ; None                      ; 74.700 ns               ;
+; N/A                                     ; 13.00 MHz ( period = 76.900 ns )                    ; wanted_ticket[0]~reg0 ; available_ticket3[5]     ; clock      ; clock    ; None                        ; None                      ; 74.700 ns               ;
+; N/A                                     ; 13.00 MHz ( period = 76.900 ns )                    ; wanted_ticket[0]~reg0 ; available_ticket3[4]     ; clock      ; clock    ; None                        ; None                      ; 74.700 ns               ;
+; N/A                                     ; 13.00 MHz ( period = 76.900 ns )                    ; wanted_ticket[0]~reg0 ; available_ticket3[1]     ; clock      ; clock    ; None                        ; None                      ; 74.700 ns               ;
+; N/A                                     ; 13.00 MHz ( period = 76.900 ns )                    ; wanted_ticket[0]~reg0 ; available_ticket3[2]     ; clock      ; clock    ; None                        ; None                      ; 74.700 ns               ;
+; N/A                                     ; 13.04 MHz ( period = 76.700 ns )                    ; wanted_ticket[0]~reg0 ; balance[0]~reg0          ; clock      ; clock    ; None                        ; None                      ; 74.500 ns               ;
+; N/A                                     ; 13.04 MHz ( period = 76.700 ns )                    ; wanted_ticket[0]~reg0 ; balance[1]~reg0          ; clock      ; clock    ; None                        ; None                      ; 74.500 ns               ;
+; N/A                                     ; 13.04 MHz ( period = 76.700 ns )                    ; wanted_ticket[0]~reg0 ; balance[2]~reg0          ; clock      ; clock    ; None                        ; None                      ; 74.500 ns               ;
+; N/A                                     ; 13.04 MHz ( period = 76.700 ns )                    ; wanted_ticket[0]~reg0 ; balance[3]~reg0          ; clock      ; clock    ; None                        ; None                      ; 74.500 ns               ;
+; N/A                                     ; 13.04 MHz ( period = 76.700 ns )                    ; wanted_ticket[0]~reg0 ; balance[4]~reg0          ; clock      ; clock    ; None                        ; None                      ; 74.500 ns               ;
+; N/A                                     ; 13.04 MHz ( period = 76.700 ns )                    ; wanted_ticket[0]~reg0 ; balance[7]~reg0          ; clock      ; clock    ; None                        ; None                      ; 74.500 ns               ;
+; N/A                                     ; 13.04 MHz ( period = 76.700 ns )                    ; wanted_ticket[0]~reg0 ; balance[11]~reg0         ; clock      ; clock    ; None                        ; None                      ; 74.500 ns               ;
+; N/A                                     ; 13.04 MHz ( period = 76.700 ns )                    ; wanted_ticket[0]~reg0 ; balance[14]~reg0         ; clock      ; clock    ; None                        ; None                      ; 74.500 ns               ;
+; N/A                                     ; 13.04 MHz ( period = 76.700 ns )                    ; wanted_ticket[0]~reg0 ; balance[15]~reg0         ; clock      ; clock    ; None                        ; None                      ; 74.500 ns               ;
+; N/A                                     ; 13.05 MHz ( period = 76.600 ns )                    ; wanted_ticket[0]~reg0 ; balance[8]~reg0          ; clock      ; clock    ; None                        ; None                      ; 74.400 ns               ;
+; N/A                                     ; 13.05 MHz ( period = 76.600 ns )                    ; wanted_ticket[0]~reg0 ; balance[9]~reg0          ; clock      ; clock    ; None                        ; None                      ; 74.400 ns               ;
+; N/A                                     ; 13.05 MHz ( period = 76.600 ns )                    ; wanted_ticket[0]~reg0 ; balance[10]~reg0         ; clock      ; clock    ; None                        ; None                      ; 74.400 ns               ;
+; N/A                                     ; 13.05 MHz ( period = 76.600 ns )                    ; wanted_ticket[0]~reg0 ; balance[12]~reg0         ; clock      ; clock    ; None                        ; None                      ; 74.400 ns               ;
+; N/A                                     ; 13.05 MHz ( period = 76.600 ns )                    ; wanted_ticket[0]~reg0 ; available_ticket[1]~reg0 ; clock      ; clock    ; None                        ; None                      ; 74.400 ns               ;
+; N/A                                     ; 13.05 MHz ( period = 76.600 ns )                    ; wanted_ticket[0]~reg0 ; available_ticket[2]~reg0 ; clock      ; clock    ; None                        ; None                      ; 74.400 ns               ;
+; N/A                                     ; 13.07 MHz ( period = 76.500 ns )                    ; wanted_ticket[0]~reg0 ; available_ticket[4]~reg0 ; clock      ; clock    ; None                        ; None                      ; 74.300 ns               ;
+; N/A                                     ; 13.33 MHz ( period = 75.000 ns )                    ; wanted_ticket[0]~reg0 ; balance[5]~reg0          ; clock      ; clock    ; None                        ; None                      ; 72.800 ns               ;
+; N/A                                     ; 13.33 MHz ( period = 75.000 ns )                    ; wanted_ticket[0]~reg0 ; balance[6]~reg0          ; clock      ; clock    ; None                        ; None                      ; 72.800 ns               ;
+; N/A                                     ; 13.33 MHz ( period = 75.000 ns )                    ; wanted_ticket[0]~reg0 ; balance[13]~reg0         ; clock      ; clock    ; None                        ; None                      ; 72.800 ns               ;
+; N/A                                     ; 13.33 MHz ( period = 75.000 ns )                    ; wanted_ticket[0]~reg0 ; available_ticket[0]~reg0 ; clock      ; clock    ; None                        ; None                      ; 72.800 ns               ;
+; N/A                                     ; 13.33 MHz ( period = 75.000 ns )                    ; wanted_ticket[0]~reg0 ; available_ticket[3]~reg0 ; clock      ; clock    ; None                        ; None                      ; 72.800 ns               ;
+; N/A                                     ; 13.48 MHz ( period = 74.200 ns )                    ; wanted_ticket[0]~reg0 ; stateB                   ; clock      ; clock    ; None                        ; None                      ; 72.000 ns               ;
+; N/A                                     ; 13.70 MHz ( period = 73.000 ns )                    ; wanted_ticket[0]~reg0 ; available_ticket[5]~reg0 ; clock      ; clock    ; None                        ; None                      ; 70.800 ns               ;
+; N/A                                     ; 13.91 MHz ( period = 71.900 ns )                    ; wanted_ticket[0]~reg0 ; ticket_out~reg0          ; clock      ; clock    ; None                        ; None                      ; 69.700 ns               ;
+; N/A                                     ; 14.16 MHz ( period = 70.600 ns )                    ; wanted_ticket[0]~reg0 ; message_no[0]~reg0       ; clock      ; clock    ; None                        ; None                      ; 68.400 ns               ;
+; N/A                                     ; 14.31 MHz ( period = 69.900 ns )                    ; route[0]~reg0         ; available_ticket6[0]     ; clock      ; clock    ; None                        ; None                      ; 67.700 ns               ;
+; N/A                                     ; 14.31 MHz ( period = 69.900 ns )                    ; route[0]~reg0         ; available_ticket4[0]     ; clock      ; clock    ; None                        ; None                      ; 67.700 ns               ;
+; N/A                                     ; 14.31 MHz ( period = 69.900 ns )                    ; route[0]~reg0         ; available_ticket6[3]     ; clock      ; clock    ; None                        ; None                      ; 67.700 ns               ;
+; N/A                                     ; 14.31 MHz ( period = 69.900 ns )                    ; route[0]~reg0         ; available_ticket4[3]     ; clock      ; clock    ; None                        ; None                      ; 67.700 ns               ;
+; N/A                                     ; 14.31 MHz ( period = 69.900 ns )                    ; route[0]~reg0         ; available_ticket6[5]     ; clock      ; clock    ; None                        ; None                      ; 67.700 ns               ;
+; N/A                                     ; 14.31 MHz ( period = 69.900 ns )                    ; route[0]~reg0         ; available_ticket4[5]     ; clock      ; clock    ; None                        ; None                      ; 67.700 ns               ;
+; N/A                                     ; 14.31 MHz ( period = 69.900 ns )                    ; route[0]~reg0         ; available_ticket6[4]     ; clock      ; clock    ; None                        ; None                      ; 67.700 ns               ;
+; N/A                                     ; 14.31 MHz ( period = 69.900 ns )                    ; route[0]~reg0         ; available_ticket4[4]     ; clock      ; clock    ; None                        ; None                      ; 67.700 ns               ;
+; N/A                                     ; 14.31 MHz ( period = 69.900 ns )                    ; route[0]~reg0         ; available_ticket6[1]     ; clock      ; clock    ; None                        ; None                      ; 67.700 ns               ;
+; N/A                                     ; 14.31 MHz ( period = 69.900 ns )                    ; route[0]~reg0         ; available_ticket4[1]     ; clock      ; clock    ; None                        ; None                      ; 67.700 ns               ;
+; N/A                                     ; 14.31 MHz ( period = 69.900 ns )                    ; route[0]~reg0         ; available_ticket6[2]     ; clock      ; clock    ; None                        ; None                      ; 67.700 ns               ;
+; N/A                                     ; 14.31 MHz ( period = 69.900 ns )                    ; route[0]~reg0         ; available_ticket4[2]     ; clock      ; clock    ; None                        ; None                      ; 67.700 ns               ;
+; N/A                                     ; 14.33 MHz ( period = 69.800 ns )                    ; route[0]~reg0         ; available_ticket7[0]     ; clock      ; clock    ; None                        ; None                      ; 67.600 ns               ;
+; N/A                                     ; 14.33 MHz ( period = 69.800 ns )                    ; route[0]~reg0         ; available_ticket7[3]     ; clock      ; clock    ; None                        ; None                      ; 67.600 ns               ;
+; N/A                                     ; 14.33 MHz ( period = 69.800 ns )                    ; route[0]~reg0         ; available_ticket7[5]     ; clock      ; clock    ; None                        ; None                      ; 67.600 ns               ;
+; N/A                                     ; 14.33 MHz ( period = 69.800 ns )                    ; route[0]~reg0         ; available_ticket7[4]     ; clock      ; clock    ; None                        ; None                      ; 67.600 ns               ;
+; N/A                                     ; 14.33 MHz ( period = 69.800 ns )                    ; route[0]~reg0         ; available_ticket7[1]     ; clock      ; clock    ; None                        ; None                      ; 67.600 ns               ;
+; N/A                                     ; 14.33 MHz ( period = 69.800 ns )                    ; route[0]~reg0         ; available_ticket7[2]     ; clock      ; clock    ; None                        ; None                      ; 67.600 ns               ;
+; N/A                                     ; 14.35 MHz ( period = 69.700 ns )                    ; route[0]~reg0         ; available_ticket8[0]     ; clock      ; clock    ; None                        ; None                      ; 67.500 ns               ;
+; N/A                                     ; 14.35 MHz ( period = 69.700 ns )                    ; route[0]~reg0         ; available_ticket8[3]     ; clock      ; clock    ; None                        ; None                      ; 67.500 ns               ;
+; N/A                                     ; 14.35 MHz ( period = 69.700 ns )                    ; route[0]~reg0         ; available_ticket8[5]     ; clock      ; clock    ; None                        ; None                      ; 67.500 ns               ;
+; N/A                                     ; 14.35 MHz ( period = 69.700 ns )                    ; route[0]~reg0         ; available_ticket8[4]     ; clock      ; clock    ; None                        ; None                      ; 67.500 ns               ;
+; N/A                                     ; 14.35 MHz ( period = 69.700 ns )                    ; route[0]~reg0         ; available_ticket8[1]     ; clock      ; clock    ; None                        ; None                      ; 67.500 ns               ;
+; N/A                                     ; 14.35 MHz ( period = 69.700 ns )                    ; route[0]~reg0         ; available_ticket8[2]     ; clock      ; clock    ; None                        ; None                      ; 67.500 ns               ;
+; N/A                                     ; 14.37 MHz ( period = 69.600 ns )                    ; route[0]~reg0         ; available_ticket5[0]     ; clock      ; clock    ; None                        ; None                      ; 67.400 ns               ;
+; N/A                                     ; 14.37 MHz ( period = 69.600 ns )                    ; route[0]~reg0         ; available_ticket5[3]     ; clock      ; clock    ; None                        ; None                      ; 67.400 ns               ;
+; N/A                                     ; 14.37 MHz ( period = 69.600 ns )                    ; route[0]~reg0         ; available_ticket5[5]     ; clock      ; clock    ; None                        ; None                      ; 67.400 ns               ;
+; N/A                                     ; 14.37 MHz ( period = 69.600 ns )                    ; route[0]~reg0         ; available_ticket5[4]     ; clock      ; clock    ; None                        ; None                      ; 67.400 ns               ;
+; N/A                                     ; 14.37 MHz ( period = 69.600 ns )                    ; route[0]~reg0         ; available_ticket5[1]     ; clock      ; clock    ; None                        ; None                      ; 67.400 ns               ;
+; N/A                                     ; 14.37 MHz ( period = 69.600 ns )                    ; route[0]~reg0         ; available_ticket5[2]     ; clock      ; clock    ; None                        ; None                      ; 67.400 ns               ;
+; N/A                                     ; 14.41 MHz ( period = 69.400 ns )                    ; route[0]~reg0         ; available_ticket9[0]     ; clock      ; clock    ; None                        ; None                      ; 67.200 ns               ;
+; N/A                                     ; 14.41 MHz ( period = 69.400 ns )                    ; route[0]~reg0         ; available_ticket2[0]     ; clock      ; clock    ; None                        ; None                      ; 67.200 ns               ;
+; N/A                                     ; 14.41 MHz ( period = 69.400 ns )                    ; route[0]~reg0         ; available_ticket1[0]     ; clock      ; clock    ; None                        ; None                      ; 67.200 ns               ;
+; N/A                                     ; 14.41 MHz ( period = 69.400 ns )                    ; route[0]~reg0         ; available_ticket9[3]     ; clock      ; clock    ; None                        ; None                      ; 67.200 ns               ;
+; N/A                                     ; 14.41 MHz ( period = 69.400 ns )                    ; route[0]~reg0         ; available_ticket2[3]     ; clock      ; clock    ; None                        ; None                      ; 67.200 ns               ;
+; N/A                                     ; 14.41 MHz ( period = 69.400 ns )                    ; route[0]~reg0         ; available_ticket1[3]     ; clock      ; clock    ; None                        ; None                      ; 67.200 ns               ;
+; N/A                                     ; 14.41 MHz ( period = 69.400 ns )                    ; route[0]~reg0         ; available_ticket9[5]     ; clock      ; clock    ; None                        ; None                      ; 67.200 ns               ;
+; N/A                                     ; 14.41 MHz ( period = 69.400 ns )                    ; route[0]~reg0         ; available_ticket2[5]     ; clock      ; clock    ; None                        ; None                      ; 67.200 ns               ;
+; N/A                                     ; 14.41 MHz ( period = 69.400 ns )                    ; route[0]~reg0         ; available_ticket1[5]     ; clock      ; clock    ; None                        ; None                      ; 67.200 ns               ;
+; N/A                                     ; 14.41 MHz ( period = 69.400 ns )                    ; route[0]~reg0         ; available_ticket9[4]     ; clock      ; clock    ; None                        ; None                      ; 67.200 ns               ;
+; N/A                                     ; 14.41 MHz ( period = 69.400 ns )                    ; route[0]~reg0         ; available_ticket2[4]     ; clock      ; clock    ; None                        ; None                      ; 67.200 ns               ;
+; N/A                                     ; 14.41 MHz ( period = 69.400 ns )                    ; route[0]~reg0         ; available_ticket1[4]     ; clock      ; clock    ; None                        ; None                      ; 67.200 ns               ;
+; N/A                                     ; 14.41 MHz ( period = 69.400 ns )                    ; route[0]~reg0         ; available_ticket9[1]     ; clock      ; clock    ; None                        ; None                      ; 67.200 ns               ;
+; N/A                                     ; 14.41 MHz ( period = 69.400 ns )                    ; route[0]~reg0         ; available_ticket2[1]     ; clock      ; clock    ; None                        ; None                      ; 67.200 ns               ;
+; N/A                                     ; 14.41 MHz ( period = 69.400 ns )                    ; route[0]~reg0         ; available_ticket1[1]     ; clock      ; clock    ; None                        ; None                      ; 67.200 ns               ;
+; N/A                                     ; 14.41 MHz ( period = 69.400 ns )                    ; route[0]~reg0         ; available_ticket9[2]     ; clock      ; clock    ; None                        ; None                      ; 67.200 ns               ;
+; N/A                                     ; 14.41 MHz ( period = 69.400 ns )                    ; route[0]~reg0         ; available_ticket2[2]     ; clock      ; clock    ; None                        ; None                      ; 67.200 ns               ;
+; N/A                                     ; 14.41 MHz ( period = 69.400 ns )                    ; route[0]~reg0         ; available_ticket1[2]     ; clock      ; clock    ; None                        ; None                      ; 67.200 ns               ;
+; N/A                                     ; 14.51 MHz ( period = 68.900 ns )                    ; route[0]~reg0         ; available_ticket3[0]     ; clock      ; clock    ; None                        ; None                      ; 66.700 ns               ;
+; N/A                                     ; 14.51 MHz ( period = 68.900 ns )                    ; route[0]~reg0         ; available_ticket3[3]     ; clock      ; clock    ; None                        ; None                      ; 66.700 ns               ;
+; N/A                                     ; 14.51 MHz ( period = 68.900 ns )                    ; route[0]~reg0         ; available_ticket3[5]     ; clock      ; clock    ; None                        ; None                      ; 66.700 ns               ;
+; N/A                                     ; 14.51 MHz ( period = 68.900 ns )                    ; route[0]~reg0         ; available_ticket3[4]     ; clock      ; clock    ; None                        ; None                      ; 66.700 ns               ;
+; N/A                                     ; 14.51 MHz ( period = 68.900 ns )                    ; route[0]~reg0         ; available_ticket3[1]     ; clock      ; clock    ; None                        ; None                      ; 66.700 ns               ;
+; N/A                                     ; 14.51 MHz ( period = 68.900 ns )                    ; route[0]~reg0         ; available_ticket3[2]     ; clock      ; clock    ; None                        ; None                      ; 66.700 ns               ;
+; N/A                                     ; 14.68 MHz ( period = 68.100 ns )                    ; route[0]~reg0         ; available_ticket[1]~reg0 ; clock      ; clock    ; None                        ; None                      ; 65.900 ns               ;
+; N/A                                     ; 14.68 MHz ( period = 68.100 ns )                    ; route[0]~reg0         ; available_ticket[2]~reg0 ; clock      ; clock    ; None                        ; None                      ; 65.900 ns               ;
+; N/A                                     ; 14.71 MHz ( period = 68.000 ns )                    ; route[0]~reg0         ; available_ticket[4]~reg0 ; clock      ; clock    ; None                        ; None                      ; 65.800 ns               ;
+; N/A                                     ; 14.73 MHz ( period = 67.900 ns )                    ; route[0]~reg0         ; balance[0]~reg0          ; clock      ; clock    ; None                        ; None                      ; 65.700 ns               ;
+; N/A                                     ; 14.73 MHz ( period = 67.900 ns )                    ; route[0]~reg0         ; balance[1]~reg0          ; clock      ; clock    ; None                        ; None                      ; 65.700 ns               ;
+; N/A                                     ; 14.73 MHz ( period = 67.900 ns )                    ; route[0]~reg0         ; balance[2]~reg0          ; clock      ; clock    ; None                        ; None                      ; 65.700 ns               ;
+; N/A                                     ; 14.73 MHz ( period = 67.900 ns )                    ; route[0]~reg0         ; balance[3]~reg0          ; clock      ; clock    ; None                        ; None                      ; 65.700 ns               ;
+; N/A                                     ; 14.73 MHz ( period = 67.900 ns )                    ; route[0]~reg0         ; balance[4]~reg0          ; clock      ; clock    ; None                        ; None                      ; 65.700 ns               ;
+; N/A                                     ; 14.73 MHz ( period = 67.900 ns )                    ; route[0]~reg0         ; balance[7]~reg0          ; clock      ; clock    ; None                        ; None                      ; 65.700 ns               ;
+; N/A                                     ; 14.73 MHz ( period = 67.900 ns )                    ; route[0]~reg0         ; balance[11]~reg0         ; clock      ; clock    ; None                        ; None                      ; 65.700 ns               ;
+; N/A                                     ; 14.73 MHz ( period = 67.900 ns )                    ; route[0]~reg0         ; balance[14]~reg0         ; clock      ; clock    ; None                        ; None                      ; 65.700 ns               ;
+; N/A                                     ; 14.73 MHz ( period = 67.900 ns )                    ; route[0]~reg0         ; balance[15]~reg0         ; clock      ; clock    ; None                        ; None                      ; 65.700 ns               ;
+; N/A                                     ; 14.75 MHz ( period = 67.800 ns )                    ; route[0]~reg0         ; balance[8]~reg0          ; clock      ; clock    ; None                        ; None                      ; 65.600 ns               ;
+; N/A                                     ; 14.75 MHz ( period = 67.800 ns )                    ; route[0]~reg0         ; balance[9]~reg0          ; clock      ; clock    ; None                        ; None                      ; 65.600 ns               ;
+; N/A                                     ; 14.75 MHz ( period = 67.800 ns )                    ; route[0]~reg0         ; balance[10]~reg0         ; clock      ; clock    ; None                        ; None                      ; 65.600 ns               ;
+; N/A                                     ; 14.75 MHz ( period = 67.800 ns )                    ; route[0]~reg0         ; balance[12]~reg0         ; clock      ; clock    ; None                        ; None                      ; 65.600 ns               ;
+; N/A                                     ; 15.04 MHz ( period = 66.500 ns )                    ; route[0]~reg0         ; available_ticket[0]~reg0 ; clock      ; clock    ; None                        ; None                      ; 64.300 ns               ;
+; N/A                                     ; 15.04 MHz ( period = 66.500 ns )                    ; route[0]~reg0         ; available_ticket[3]~reg0 ; clock      ; clock    ; None                        ; None                      ; 64.300 ns               ;
+; N/A                                     ; 15.08 MHz ( period = 66.300 ns )                    ; route[0]~reg0         ; balance[5]~reg0          ; clock      ; clock    ; None                        ; None                      ; 64.100 ns               ;
+; N/A                                     ; 15.08 MHz ( period = 66.300 ns )                    ; route[0]~reg0         ; balance[6]~reg0          ; clock      ; clock    ; None                        ; None                      ; 64.100 ns               ;
+; N/A                                     ; 15.08 MHz ( period = 66.300 ns )                    ; route[0]~reg0         ; balance[13]~reg0         ; clock      ; clock    ; None                        ; None                      ; 64.100 ns               ;
+; N/A                                     ; 15.11 MHz ( period = 66.200 ns )                    ; route[0]~reg0         ; message_no[1]~reg0       ; clock      ; clock    ; None                        ; None                      ; 64.000 ns               ;
+; N/A                                     ; 15.27 MHz ( period = 65.500 ns )                    ; route[0]~reg0         ; message_no[0]~reg0       ; clock      ; clock    ; None                        ; None                      ; 63.300 ns               ;
+; N/A                                     ; 15.38 MHz ( period = 65.000 ns )                    ; route[0]~reg0         ; available_ticket[5]~reg0 ; clock      ; clock    ; None                        ; None                      ; 62.800 ns               ;
+; N/A                                     ; 15.38 MHz ( period = 65.000 ns )                    ; route[0]~reg0         ; stateB                   ; clock      ; clock    ; None                        ; None                      ; 62.800 ns               ;
+; N/A                                     ; 15.58 MHz ( period = 64.200 ns )                    ; route[0]~reg0         ; message_no[2]~reg0       ; clock      ; clock    ; None                        ; None                      ; 62.000 ns               ;
+; N/A                                     ; 15.65 MHz ( period = 63.900 ns )                    ; route[0]~reg0         ; ticket_out~reg0          ; clock      ; clock    ; None                        ; None                      ; 61.700 ns               ;
+; N/A                                     ; 15.97 MHz ( period = 62.600 ns )                    ; wanted_ticket[0]~reg0 ; message_no[1]~reg0       ; clock      ; clock    ; None                        ; None                      ; 60.400 ns               ;
+; N/A                                     ; 16.00 MHz ( period = 62.500 ns )                    ; route[0]~reg0         ; stateC                   ; clock      ; clock    ; None                        ; None                      ; 60.300 ns               ;
+; N/A                                     ; 16.08 MHz ( period = 62.200 ns )                    ; route[0]~reg0         ; message_no[3]~reg0       ; clock      ; clock    ; None                        ; None                      ; 60.000 ns               ;
+; N/A                                     ; 16.26 MHz ( period = 61.500 ns )                    ; route[0]~reg0         ; stateE                   ; clock      ; clock    ; None                        ; None                      ; 59.300 ns               ;
+; N/A                                     ; 16.39 MHz ( period = 61.000 ns )                    ; wanted_ticket[1]~reg0 ; available_ticket6[0]     ; clock      ; clock    ; None                        ; None                      ; 58.800 ns               ;
+; N/A                                     ; 16.39 MHz ( period = 61.000 ns )                    ; wanted_ticket[1]~reg0 ; available_ticket4[0]     ; clock      ; clock    ; None                        ; None                      ; 58.800 ns               ;
+; N/A                                     ; 16.39 MHz ( period = 61.000 ns )                    ; wanted_ticket[1]~reg0 ; available_ticket6[3]     ; clock      ; clock    ; None                        ; None                      ; 58.800 ns               ;
+; N/A                                     ; 16.39 MHz ( period = 61.000 ns )                    ; wanted_ticket[1]~reg0 ; available_ticket4[3]     ; clock      ; clock    ; None                        ; None                      ; 58.800 ns               ;
+; N/A                                     ; 16.39 MHz ( period = 61.000 ns )                    ; wanted_ticket[1]~reg0 ; available_ticket6[5]     ; clock      ; clock    ; None                        ; None                      ; 58.800 ns               ;
+; N/A                                     ; 16.39 MHz ( period = 61.000 ns )                    ; wanted_ticket[1]~reg0 ; available_ticket4[5]     ; clock      ; clock    ; None                        ; None                      ; 58.800 ns               ;
+; N/A                                     ; 16.39 MHz ( period = 61.000 ns )                    ; wanted_ticket[1]~reg0 ; available_ticket6[4]     ; clock      ; clock    ; None                        ; None                      ; 58.800 ns               ;
+; N/A                                     ; 16.39 MHz ( period = 61.000 ns )                    ; wanted_ticket[1]~reg0 ; available_ticket4[4]     ; clock      ; clock    ; None                        ; None                      ; 58.800 ns               ;
+; N/A                                     ; 16.39 MHz ( period = 61.000 ns )                    ; wanted_ticket[1]~reg0 ; available_ticket6[1]     ; clock      ; clock    ; None                        ; None                      ; 58.800 ns               ;
+; N/A                                     ; 16.39 MHz ( period = 61.000 ns )                    ; wanted_ticket[1]~reg0 ; available_ticket4[1]     ; clock      ; clock    ; None                        ; None                      ; 58.800 ns               ;
+; N/A                                     ; 16.39 MHz ( period = 61.000 ns )                    ; wanted_ticket[1]~reg0 ; available_ticket6[2]     ; clock      ; clock    ; None                        ; None                      ; 58.800 ns               ;
+; N/A                                     ; 16.39 MHz ( period = 61.000 ns )                    ; wanted_ticket[1]~reg0 ; available_ticket4[2]     ; clock      ; clock    ; None                        ; None                      ; 58.800 ns               ;
+; N/A                                     ; 16.42 MHz ( period = 60.900 ns )                    ; wanted_ticket[2]~reg0 ; available_ticket6[0]     ; clock      ; clock    ; None                        ; None                      ; 58.700 ns               ;
+; N/A                                     ; 16.42 MHz ( period = 60.900 ns )                    ; wanted_ticket[2]~reg0 ; available_ticket4[0]     ; clock      ; clock    ; None                        ; None                      ; 58.700 ns               ;
+; N/A                                     ; 16.42 MHz ( period = 60.900 ns )                    ; wanted_ticket[1]~reg0 ; available_ticket7[0]     ; clock      ; clock    ; None                        ; None                      ; 58.700 ns               ;
+; N/A                                     ; 16.42 MHz ( period = 60.900 ns )                    ; wanted_ticket[2]~reg0 ; available_ticket6[3]     ; clock      ; clock    ; None                        ; None                      ; 58.700 ns               ;
+; N/A                                     ; 16.42 MHz ( period = 60.900 ns )                    ; wanted_ticket[2]~reg0 ; available_ticket4[3]     ; clock      ; clock    ; None                        ; None                      ; 58.700 ns               ;
+; N/A                                     ; 16.42 MHz ( period = 60.900 ns )                    ; wanted_ticket[1]~reg0 ; available_ticket7[3]     ; clock      ; clock    ; None                        ; None                      ; 58.700 ns               ;
+; N/A                                     ; 16.42 MHz ( period = 60.900 ns )                    ; wanted_ticket[2]~reg0 ; available_ticket6[5]     ; clock      ; clock    ; None                        ; None                      ; 58.700 ns               ;
+; N/A                                     ; 16.42 MHz ( period = 60.900 ns )                    ; wanted_ticket[2]~reg0 ; available_ticket4[5]     ; clock      ; clock    ; None                        ; None                      ; 58.700 ns               ;
+; N/A                                     ; 16.42 MHz ( period = 60.900 ns )                    ; wanted_ticket[1]~reg0 ; available_ticket7[5]     ; clock      ; clock    ; None                        ; None                      ; 58.700 ns               ;
+; N/A                                     ; 16.42 MHz ( period = 60.900 ns )                    ; wanted_ticket[2]~reg0 ; available_ticket6[4]     ; clock      ; clock    ; None                        ; None                      ; 58.700 ns               ;
+; N/A                                     ; 16.42 MHz ( period = 60.900 ns )                    ; wanted_ticket[2]~reg0 ; available_ticket4[4]     ; clock      ; clock    ; None                        ; None                      ; 58.700 ns               ;
+; N/A                                     ; 16.42 MHz ( period = 60.900 ns )                    ; wanted_ticket[1]~reg0 ; available_ticket7[4]     ; clock      ; clock    ; None                        ; None                      ; 58.700 ns               ;
+; N/A                                     ; 16.42 MHz ( period = 60.900 ns )                    ; wanted_ticket[2]~reg0 ; available_ticket6[1]     ; clock      ; clock    ; None                        ; None                      ; 58.700 ns               ;
+; N/A                                     ; 16.42 MHz ( period = 60.900 ns )                    ; wanted_ticket[2]~reg0 ; available_ticket4[1]     ; clock      ; clock    ; None                        ; None                      ; 58.700 ns               ;
+; N/A                                     ; 16.42 MHz ( period = 60.900 ns )                    ; wanted_ticket[1]~reg0 ; available_ticket7[1]     ; clock      ; clock    ; None                        ; None                      ; 58.700 ns               ;
+; N/A                                     ; 16.42 MHz ( period = 60.900 ns )                    ; wanted_ticket[2]~reg0 ; available_ticket6[2]     ; clock      ; clock    ; None                        ; None                      ; 58.700 ns               ;
+; N/A                                     ; 16.42 MHz ( period = 60.900 ns )                    ; wanted_ticket[2]~reg0 ; available_ticket4[2]     ; clock      ; clock    ; None                        ; None                      ; 58.700 ns               ;
+; N/A                                     ; 16.42 MHz ( period = 60.900 ns )                    ; wanted_ticket[1]~reg0 ; available_ticket7[2]     ; clock      ; clock    ; None                        ; None                      ; 58.700 ns               ;
+; N/A                                     ; 16.45 MHz ( period = 60.800 ns )                    ; wanted_ticket[2]~reg0 ; available_ticket7[5]     ; clock      ; clock    ; None                        ; None                      ; 58.600 ns               ;
+; N/A                                     ; 16.45 MHz ( period = 60.800 ns )                    ; wanted_ticket[2]~reg0 ; available_ticket7[4]     ; clock      ; clock    ; None                        ; None                      ; 58.600 ns               ;
+; N/A                                     ; 16.45 MHz ( period = 60.800 ns )                    ; wanted_ticket[1]~reg0 ; available_ticket8[4]     ; clock      ; clock    ; None                        ; None                      ; 58.600 ns               ;
+; N/A                                     ; 16.45 MHz ( period = 60.800 ns )                    ; wanted_ticket[1]~reg0 ; available_ticket8[1]     ; clock      ; clock    ; None                        ; None                      ; 58.600 ns               ;
+; N/A                                     ; 16.45 MHz ( period = 60.800 ns )                    ; wanted_ticket[2]~reg0 ; available_ticket7[1]     ; clock      ; clock    ; None                        ; None                      ; 58.600 ns               ;
+; N/A                                     ; 16.45 MHz ( period = 60.800 ns )                    ; wanted_ticket[2]~reg0 ; available_ticket7[2]     ; clock      ; clock    ; None                        ; None                      ; 58.600 ns               ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;                       ;                          ;            ;          ;                             ;                           ;                         ;
++-----------------------------------------+-----------------------------------------------------+-----------------------+--------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; tsu                                                                                                                                                         ;
++-----------------------------------------+-----------------------------------------------------+------------+----------+--------------------------+----------+
+; Slack                                   ; Required tsu                                        ; Actual tsu ; From     ; To                       ; To Clock ;
++-----------------------------------------+-----------------------------------------------------+------------+----------+--------------------------+----------+
+; N/A                                     ; None                                                ; 79.700 ns  ; digit[8] ; available_ticket6[0]     ; clock    ;
+; N/A                                     ; None                                                ; 79.700 ns  ; digit[8] ; available_ticket4[0]     ; clock    ;
+; N/A                                     ; None                                                ; 79.700 ns  ; digit[8] ; available_ticket6[3]     ; clock    ;
+; N/A                                     ; None                                                ; 79.700 ns  ; digit[8] ; available_ticket4[3]     ; clock    ;
+; N/A                                     ; None                                                ; 79.700 ns  ; digit[8] ; available_ticket6[5]     ; clock    ;
+; N/A                                     ; None                                                ; 79.700 ns  ; digit[8] ; available_ticket4[5]     ; clock    ;
+; N/A                                     ; None                                                ; 79.700 ns  ; digit[8] ; available_ticket6[4]     ; clock    ;
+; N/A                                     ; None                                                ; 79.700 ns  ; digit[8] ; available_ticket4[4]     ; clock    ;
+; N/A                                     ; None                                                ; 79.700 ns  ; digit[8] ; available_ticket6[1]     ; clock    ;
+; N/A                                     ; None                                                ; 79.700 ns  ; digit[8] ; available_ticket4[1]     ; clock    ;
+; N/A                                     ; None                                                ; 79.700 ns  ; digit[8] ; available_ticket6[2]     ; clock    ;
+; N/A                                     ; None                                                ; 79.700 ns  ; digit[8] ; available_ticket4[2]     ; clock    ;
+; N/A                                     ; None                                                ; 79.600 ns  ; digit[8] ; available_ticket7[0]     ; clock    ;
+; N/A                                     ; None                                                ; 79.600 ns  ; digit[8] ; available_ticket7[3]     ; clock    ;
+; N/A                                     ; None                                                ; 79.600 ns  ; digit[8] ; available_ticket7[5]     ; clock    ;
+; N/A                                     ; None                                                ; 79.600 ns  ; digit[8] ; available_ticket7[4]     ; clock    ;
+; N/A                                     ; None                                                ; 79.600 ns  ; digit[8] ; available_ticket7[1]     ; clock    ;
+; N/A                                     ; None                                                ; 79.600 ns  ; digit[8] ; available_ticket7[2]     ; clock    ;
+; N/A                                     ; None                                                ; 79.500 ns  ; digit[8] ; available_ticket8[0]     ; clock    ;
+; N/A                                     ; None                                                ; 79.500 ns  ; digit[8] ; available_ticket8[3]     ; clock    ;
+; N/A                                     ; None                                                ; 79.500 ns  ; digit[8] ; available_ticket8[5]     ; clock    ;
+; N/A                                     ; None                                                ; 79.500 ns  ; digit[8] ; available_ticket8[4]     ; clock    ;
+; N/A                                     ; None                                                ; 79.500 ns  ; digit[8] ; available_ticket8[1]     ; clock    ;
+; N/A                                     ; None                                                ; 79.500 ns  ; digit[8] ; available_ticket8[2]     ; clock    ;
+; N/A                                     ; None                                                ; 79.400 ns  ; digit[8] ; available_ticket5[0]     ; clock    ;
+; N/A                                     ; None                                                ; 79.400 ns  ; digit[8] ; available_ticket5[3]     ; clock    ;
+; N/A                                     ; None                                                ; 79.400 ns  ; digit[8] ; available_ticket5[5]     ; clock    ;
+; N/A                                     ; None                                                ; 79.400 ns  ; digit[8] ; available_ticket5[4]     ; clock    ;
+; N/A                                     ; None                                                ; 79.400 ns  ; digit[8] ; available_ticket5[1]     ; clock    ;
+; N/A                                     ; None                                                ; 79.400 ns  ; digit[8] ; available_ticket5[2]     ; clock    ;
+; N/A                                     ; None                                                ; 79.200 ns  ; digit[8] ; available_ticket9[0]     ; clock    ;
+; N/A                                     ; None                                                ; 79.200 ns  ; digit[8] ; available_ticket2[0]     ; clock    ;
+; N/A                                     ; None                                                ; 79.200 ns  ; digit[8] ; available_ticket1[0]     ; clock    ;
+; N/A                                     ; None                                                ; 79.200 ns  ; digit[8] ; available_ticket9[3]     ; clock    ;
+; N/A                                     ; None                                                ; 79.200 ns  ; digit[8] ; available_ticket2[3]     ; clock    ;
+; N/A                                     ; None                                                ; 79.200 ns  ; digit[8] ; available_ticket1[3]     ; clock    ;
+; N/A                                     ; None                                                ; 79.200 ns  ; digit[8] ; available_ticket9[5]     ; clock    ;
+; N/A                                     ; None                                                ; 79.200 ns  ; digit[8] ; available_ticket2[5]     ; clock    ;
+; N/A                                     ; None                                                ; 79.200 ns  ; digit[8] ; available_ticket1[5]     ; clock    ;
+; N/A                                     ; None                                                ; 79.200 ns  ; digit[8] ; available_ticket9[4]     ; clock    ;
+; N/A                                     ; None                                                ; 79.200 ns  ; digit[8] ; available_ticket2[4]     ; clock    ;
+; N/A                                     ; None                                                ; 79.200 ns  ; digit[8] ; available_ticket1[4]     ; clock    ;
+; N/A                                     ; None                                                ; 79.200 ns  ; digit[8] ; available_ticket9[1]     ; clock    ;
+; N/A                                     ; None                                                ; 79.200 ns  ; digit[8] ; available_ticket2[1]     ; clock    ;
+; N/A                                     ; None                                                ; 79.200 ns  ; digit[8] ; available_ticket1[1]     ; clock    ;
+; N/A                                     ; None                                                ; 79.200 ns  ; digit[8] ; available_ticket9[2]     ; clock    ;
+; N/A                                     ; None                                                ; 79.200 ns  ; digit[8] ; available_ticket2[2]     ; clock    ;
+; N/A                                     ; None                                                ; 79.200 ns  ; digit[8] ; available_ticket1[2]     ; clock    ;
+; N/A                                     ; None                                                ; 78.700 ns  ; digit[8] ; available_ticket3[0]     ; clock    ;
+; N/A                                     ; None                                                ; 78.700 ns  ; digit[8] ; available_ticket3[3]     ; clock    ;
+; N/A                                     ; None                                                ; 78.700 ns  ; digit[8] ; available_ticket3[5]     ; clock    ;
+; N/A                                     ; None                                                ; 78.700 ns  ; digit[8] ; available_ticket3[4]     ; clock    ;
+; N/A                                     ; None                                                ; 78.700 ns  ; digit[8] ; available_ticket3[1]     ; clock    ;
+; N/A                                     ; None                                                ; 78.700 ns  ; digit[8] ; available_ticket3[2]     ; clock    ;
+; N/A                                     ; None                                                ; 78.600 ns  ; digit[9] ; available_ticket6[0]     ; clock    ;
+; N/A                                     ; None                                                ; 78.600 ns  ; digit[9] ; available_ticket4[0]     ; clock    ;
+; N/A                                     ; None                                                ; 78.600 ns  ; digit[9] ; available_ticket6[3]     ; clock    ;
+; N/A                                     ; None                                                ; 78.600 ns  ; digit[9] ; available_ticket4[3]     ; clock    ;
+; N/A                                     ; None                                                ; 78.600 ns  ; digit[9] ; available_ticket6[5]     ; clock    ;
+; N/A                                     ; None                                                ; 78.600 ns  ; digit[9] ; available_ticket4[5]     ; clock    ;
+; N/A                                     ; None                                                ; 78.600 ns  ; digit[9] ; available_ticket6[4]     ; clock    ;
+; N/A                                     ; None                                                ; 78.600 ns  ; digit[9] ; available_ticket4[4]     ; clock    ;
+; N/A                                     ; None                                                ; 78.600 ns  ; digit[9] ; available_ticket6[1]     ; clock    ;
+; N/A                                     ; None                                                ; 78.600 ns  ; digit[9] ; available_ticket4[1]     ; clock    ;
+; N/A                                     ; None                                                ; 78.600 ns  ; digit[9] ; available_ticket6[2]     ; clock    ;
+; N/A                                     ; None                                                ; 78.600 ns  ; digit[9] ; available_ticket4[2]     ; clock    ;
+; N/A                                     ; None                                                ; 78.500 ns  ; digit[8] ; balance[0]~reg0          ; clock    ;
+; N/A                                     ; None                                                ; 78.500 ns  ; digit[8] ; balance[1]~reg0          ; clock    ;
+; N/A                                     ; None                                                ; 78.500 ns  ; digit[8] ; balance[2]~reg0          ; clock    ;
+; N/A                                     ; None                                                ; 78.500 ns  ; digit[8] ; balance[3]~reg0          ; clock    ;
+; N/A                                     ; None                                                ; 78.500 ns  ; digit[8] ; balance[4]~reg0          ; clock    ;
+; N/A                                     ; None                                                ; 78.500 ns  ; digit[8] ; balance[7]~reg0          ; clock    ;
+; N/A                                     ; None                                                ; 78.500 ns  ; digit[8] ; balance[11]~reg0         ; clock    ;
+; N/A                                     ; None                                                ; 78.500 ns  ; digit[8] ; balance[14]~reg0         ; clock    ;
+; N/A                                     ; None                                                ; 78.500 ns  ; digit[8] ; balance[15]~reg0         ; clock    ;
+; N/A                                     ; None                                                ; 78.500 ns  ; digit[9] ; available_ticket7[0]     ; clock    ;
+; N/A                                     ; None                                                ; 78.500 ns  ; digit[9] ; available_ticket7[3]     ; clock    ;
+; N/A                                     ; None                                                ; 78.500 ns  ; digit[9] ; available_ticket7[5]     ; clock    ;
+; N/A                                     ; None                                                ; 78.500 ns  ; digit[9] ; available_ticket7[4]     ; clock    ;
+; N/A                                     ; None                                                ; 78.500 ns  ; digit[9] ; available_ticket7[1]     ; clock    ;
+; N/A                                     ; None                                                ; 78.500 ns  ; digit[9] ; available_ticket7[2]     ; clock    ;
+; N/A                                     ; None                                                ; 78.400 ns  ; digit[8] ; balance[8]~reg0          ; clock    ;
+; N/A                                     ; None                                                ; 78.400 ns  ; digit[8] ; balance[9]~reg0          ; clock    ;
+; N/A                                     ; None                                                ; 78.400 ns  ; digit[8] ; balance[10]~reg0         ; clock    ;
+; N/A                                     ; None                                                ; 78.400 ns  ; digit[8] ; balance[12]~reg0         ; clock    ;
+; N/A                                     ; None                                                ; 78.400 ns  ; digit[8] ; available_ticket[1]~reg0 ; clock    ;
+; N/A                                     ; None                                                ; 78.400 ns  ; digit[8] ; available_ticket[2]~reg0 ; clock    ;
+; N/A                                     ; None                                                ; 78.400 ns  ; digit[9] ; available_ticket8[0]     ; clock    ;
+; N/A                                     ; None                                                ; 78.400 ns  ; digit[9] ; available_ticket8[3]     ; clock    ;
+; N/A                                     ; None                                                ; 78.400 ns  ; digit[9] ; available_ticket8[5]     ; clock    ;
+; N/A                                     ; None                                                ; 78.400 ns  ; digit[9] ; available_ticket8[4]     ; clock    ;
+; N/A                                     ; None                                                ; 78.400 ns  ; digit[9] ; available_ticket8[1]     ; clock    ;
+; N/A                                     ; None                                                ; 78.400 ns  ; digit[9] ; available_ticket8[2]     ; clock    ;
+; N/A                                     ; None                                                ; 78.300 ns  ; digit[8] ; available_ticket[4]~reg0 ; clock    ;
+; N/A                                     ; None                                                ; 78.300 ns  ; digit[9] ; available_ticket5[0]     ; clock    ;
+; N/A                                     ; None                                                ; 78.300 ns  ; digit[9] ; available_ticket5[3]     ; clock    ;
+; N/A                                     ; None                                                ; 78.300 ns  ; digit[9] ; available_ticket5[5]     ; clock    ;
+; N/A                                     ; None                                                ; 78.300 ns  ; digit[9] ; available_ticket5[4]     ; clock    ;
+; N/A                                     ; None                                                ; 78.300 ns  ; digit[9] ; available_ticket5[1]     ; clock    ;
+; N/A                                     ; None                                                ; 78.300 ns  ; digit[9] ; available_ticket5[2]     ; clock    ;
+; N/A                                     ; None                                                ; 78.100 ns  ; digit[9] ; available_ticket9[0]     ; clock    ;
+; N/A                                     ; None                                                ; 78.100 ns  ; digit[9] ; available_ticket2[0]     ; clock    ;
+; N/A                                     ; None                                                ; 78.100 ns  ; digit[9] ; available_ticket1[0]     ; clock    ;
+; N/A                                     ; None                                                ; 78.100 ns  ; digit[9] ; available_ticket9[3]     ; clock    ;
+; N/A                                     ; None                                                ; 78.100 ns  ; digit[9] ; available_ticket2[3]     ; clock    ;
+; N/A                                     ; None                                                ; 78.100 ns  ; digit[9] ; available_ticket1[3]     ; clock    ;
+; N/A                                     ; None                                                ; 78.100 ns  ; digit[9] ; available_ticket9[5]     ; clock    ;
+; N/A                                     ; None                                                ; 78.100 ns  ; digit[9] ; available_ticket2[5]     ; clock    ;
+; N/A                                     ; None                                                ; 78.100 ns  ; digit[9] ; available_ticket1[5]     ; clock    ;
+; N/A                                     ; None                                                ; 78.100 ns  ; digit[9] ; available_ticket9[4]     ; clock    ;
+; N/A                                     ; None                                                ; 78.100 ns  ; digit[9] ; available_ticket2[4]     ; clock    ;
+; N/A                                     ; None                                                ; 78.100 ns  ; digit[9] ; available_ticket1[4]     ; clock    ;
+; N/A                                     ; None                                                ; 78.100 ns  ; digit[9] ; available_ticket9[1]     ; clock    ;
+; N/A                                     ; None                                                ; 78.100 ns  ; digit[9] ; available_ticket2[1]     ; clock    ;
+; N/A                                     ; None                                                ; 78.100 ns  ; digit[9] ; available_ticket1[1]     ; clock    ;
+; N/A                                     ; None                                                ; 78.100 ns  ; digit[9] ; available_ticket9[2]     ; clock    ;
+; N/A                                     ; None                                                ; 78.100 ns  ; digit[9] ; available_ticket2[2]     ; clock    ;
+; N/A                                     ; None                                                ; 78.100 ns  ; digit[9] ; available_ticket1[2]     ; clock    ;
+; N/A                                     ; None                                                ; 77.900 ns  ; digit[7] ; available_ticket6[0]     ; clock    ;
+; N/A                                     ; None                                                ; 77.900 ns  ; digit[7] ; available_ticket4[0]     ; clock    ;
+; N/A                                     ; None                                                ; 77.900 ns  ; digit[7] ; available_ticket6[3]     ; clock    ;
+; N/A                                     ; None                                                ; 77.900 ns  ; digit[7] ; available_ticket4[3]     ; clock    ;
+; N/A                                     ; None                                                ; 77.900 ns  ; digit[7] ; available_ticket6[5]     ; clock    ;
+; N/A                                     ; None                                                ; 77.900 ns  ; digit[7] ; available_ticket4[5]     ; clock    ;
+; N/A                                     ; None                                                ; 77.900 ns  ; digit[7] ; available_ticket6[4]     ; clock    ;
+; N/A                                     ; None                                                ; 77.900 ns  ; digit[7] ; available_ticket4[4]     ; clock    ;
+; N/A                                     ; None                                                ; 77.900 ns  ; digit[7] ; available_ticket6[1]     ; clock    ;
+; N/A                                     ; None                                                ; 77.900 ns  ; digit[7] ; available_ticket4[1]     ; clock    ;
+; N/A                                     ; None                                                ; 77.900 ns  ; digit[7] ; available_ticket6[2]     ; clock    ;
+; N/A                                     ; None                                                ; 77.900 ns  ; digit[7] ; available_ticket4[2]     ; clock    ;
+; N/A                                     ; None                                                ; 77.800 ns  ; digit[7] ; available_ticket7[0]     ; clock    ;
+; N/A                                     ; None                                                ; 77.800 ns  ; digit[7] ; available_ticket7[3]     ; clock    ;
+; N/A                                     ; None                                                ; 77.800 ns  ; digit[7] ; available_ticket7[5]     ; clock    ;
+; N/A                                     ; None                                                ; 77.800 ns  ; digit[7] ; available_ticket7[4]     ; clock    ;
+; N/A                                     ; None                                                ; 77.800 ns  ; digit[7] ; available_ticket7[1]     ; clock    ;
+; N/A                                     ; None                                                ; 77.800 ns  ; digit[7] ; available_ticket7[2]     ; clock    ;
+; N/A                                     ; None                                                ; 77.700 ns  ; digit[7] ; available_ticket8[0]     ; clock    ;
+; N/A                                     ; None                                                ; 77.700 ns  ; digit[7] ; available_ticket8[3]     ; clock    ;
+; N/A                                     ; None                                                ; 77.700 ns  ; digit[7] ; available_ticket8[5]     ; clock    ;
+; N/A                                     ; None                                                ; 77.700 ns  ; digit[7] ; available_ticket8[4]     ; clock    ;
+; N/A                                     ; None                                                ; 77.700 ns  ; digit[7] ; available_ticket8[1]     ; clock    ;
+; N/A                                     ; None                                                ; 77.700 ns  ; digit[7] ; available_ticket8[2]     ; clock    ;
+; N/A                                     ; None                                                ; 77.600 ns  ; digit[7] ; available_ticket5[0]     ; clock    ;
+; N/A                                     ; None                                                ; 77.600 ns  ; digit[7] ; available_ticket5[3]     ; clock    ;
+; N/A                                     ; None                                                ; 77.600 ns  ; digit[7] ; available_ticket5[5]     ; clock    ;
+; N/A                                     ; None                                                ; 77.600 ns  ; digit[7] ; available_ticket5[4]     ; clock    ;
+; N/A                                     ; None                                                ; 77.600 ns  ; digit[7] ; available_ticket5[1]     ; clock    ;
+; N/A                                     ; None                                                ; 77.600 ns  ; digit[7] ; available_ticket5[2]     ; clock    ;
+; N/A                                     ; None                                                ; 77.600 ns  ; digit[9] ; available_ticket3[0]     ; clock    ;
+; N/A                                     ; None                                                ; 77.600 ns  ; digit[9] ; available_ticket3[3]     ; clock    ;
+; N/A                                     ; None                                                ; 77.600 ns  ; digit[9] ; available_ticket3[5]     ; clock    ;
+; N/A                                     ; None                                                ; 77.600 ns  ; digit[9] ; available_ticket3[4]     ; clock    ;
+; N/A                                     ; None                                                ; 77.600 ns  ; digit[9] ; available_ticket3[1]     ; clock    ;
+; N/A                                     ; None                                                ; 77.600 ns  ; digit[9] ; available_ticket3[2]     ; clock    ;
+; N/A                                     ; None                                                ; 77.400 ns  ; digit[7] ; available_ticket9[0]     ; clock    ;
+; N/A                                     ; None                                                ; 77.400 ns  ; digit[7] ; available_ticket2[0]     ; clock    ;
+; N/A                                     ; None                                                ; 77.400 ns  ; digit[7] ; available_ticket1[0]     ; clock    ;
+; N/A                                     ; None                                                ; 77.400 ns  ; digit[7] ; available_ticket9[3]     ; clock    ;
+; N/A                                     ; None                                                ; 77.400 ns  ; digit[7] ; available_ticket2[3]     ; clock    ;
+; N/A                                     ; None                                                ; 77.400 ns  ; digit[7] ; available_ticket1[3]     ; clock    ;
+; N/A                                     ; None                                                ; 77.400 ns  ; digit[7] ; available_ticket9[5]     ; clock    ;
+; N/A                                     ; None                                                ; 77.400 ns  ; digit[7] ; available_ticket2[5]     ; clock    ;
+; N/A                                     ; None                                                ; 77.400 ns  ; digit[7] ; available_ticket1[5]     ; clock    ;
+; N/A                                     ; None                                                ; 77.400 ns  ; digit[7] ; available_ticket9[4]     ; clock    ;
+; N/A                                     ; None                                                ; 77.400 ns  ; digit[7] ; available_ticket2[4]     ; clock    ;
+; N/A                                     ; None                                                ; 77.400 ns  ; digit[7] ; available_ticket1[4]     ; clock    ;
+; N/A                                     ; None                                                ; 77.400 ns  ; digit[7] ; available_ticket9[1]     ; clock    ;
+; N/A                                     ; None                                                ; 77.400 ns  ; digit[7] ; available_ticket2[1]     ; clock    ;
+; N/A                                     ; None                                                ; 77.400 ns  ; digit[7] ; available_ticket1[1]     ; clock    ;
+; N/A                                     ; None                                                ; 77.400 ns  ; digit[7] ; available_ticket9[2]     ; clock    ;
+; N/A                                     ; None                                                ; 77.400 ns  ; digit[7] ; available_ticket2[2]     ; clock    ;
+; N/A                                     ; None                                                ; 77.400 ns  ; digit[7] ; available_ticket1[2]     ; clock    ;
+; N/A                                     ; None                                                ; 77.400 ns  ; digit[9] ; balance[0]~reg0          ; clock    ;
+; N/A                                     ; None                                                ; 77.400 ns  ; digit[9] ; balance[1]~reg0          ; clock    ;
+; N/A                                     ; None                                                ; 77.400 ns  ; digit[9] ; balance[2]~reg0          ; clock    ;
+; N/A                                     ; None                                                ; 77.400 ns  ; digit[9] ; balance[3]~reg0          ; clock    ;
+; N/A                                     ; None                                                ; 77.400 ns  ; digit[9] ; balance[4]~reg0          ; clock    ;
+; N/A                                     ; None                                                ; 77.400 ns  ; digit[9] ; balance[7]~reg0          ; clock    ;
+; N/A                                     ; None                                                ; 77.400 ns  ; digit[9] ; balance[11]~reg0         ; clock    ;
+; N/A                                     ; None                                                ; 77.400 ns  ; digit[9] ; balance[14]~reg0         ; clock    ;
+; N/A                                     ; None                                                ; 77.400 ns  ; digit[9] ; balance[15]~reg0         ; clock    ;
+; N/A                                     ; None                                                ; 77.300 ns  ; digit[9] ; balance[8]~reg0          ; clock    ;
+; N/A                                     ; None                                                ; 77.300 ns  ; digit[9] ; balance[9]~reg0          ; clock    ;
+; N/A                                     ; None                                                ; 77.300 ns  ; digit[9] ; balance[10]~reg0         ; clock    ;
+; N/A                                     ; None                                                ; 77.300 ns  ; digit[9] ; balance[12]~reg0         ; clock    ;
+; N/A                                     ; None                                                ; 77.300 ns  ; digit[9] ; available_ticket[1]~reg0 ; clock    ;
+; N/A                                     ; None                                                ; 77.300 ns  ; digit[9] ; available_ticket[2]~reg0 ; clock    ;
+; N/A                                     ; None                                                ; 77.200 ns  ; digit[9] ; available_ticket[4]~reg0 ; clock    ;
+; N/A                                     ; None                                                ; 76.900 ns  ; digit[7] ; available_ticket3[0]     ; clock    ;
+; N/A                                     ; None                                                ; 76.900 ns  ; digit[7] ; available_ticket3[3]     ; clock    ;
+; N/A                                     ; None                                                ; 76.900 ns  ; digit[7] ; available_ticket3[5]     ; clock    ;
+; N/A                                     ; None                                                ; 76.900 ns  ; digit[7] ; available_ticket3[4]     ; clock    ;
+; N/A                                     ; None                                                ; 76.900 ns  ; digit[7] ; available_ticket3[1]     ; clock    ;
+; N/A                                     ; None                                                ; 76.900 ns  ; digit[7] ; available_ticket3[2]     ; clock    ;
+; N/A                                     ; None                                                ; 76.800 ns  ; digit[6] ; available_ticket6[0]     ; clock    ;
+; N/A                                     ; None                                                ; 76.800 ns  ; digit[6] ; available_ticket4[0]     ; clock    ;
+; N/A                                     ; None                                                ; 76.800 ns  ; digit[6] ; available_ticket6[3]     ; clock    ;
+; N/A                                     ; None                                                ; 76.800 ns  ; digit[6] ; available_ticket4[3]     ; clock    ;
+; N/A                                     ; None                                                ; 76.800 ns  ; digit[6] ; available_ticket6[5]     ; clock    ;
+; N/A                                     ; None                                                ; 76.800 ns  ; digit[6] ; available_ticket4[5]     ; clock    ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;            ;          ;                          ;          ;
++-----------------------------------------+-----------------------------------------------------+------------+----------+--------------------------+----------+
+
+
++-------------------------------------------------------------------------------------------------+
+; tco                                                                                             ;
++-------+--------------+------------+--------------------------+---------------------+------------+
+; Slack ; Required tco ; Actual tco ; From                     ; To                  ; From Clock ;
++-------+--------------+------------+--------------------------+---------------------+------------+
+; N/A   ; None         ; 12.500 ns  ; available_ticket[4]~reg0 ; available_ticket[4] ; clock      ;
+; N/A   ; None         ; 11.900 ns  ; total_fare[10]~reg0      ; total_fare[10]      ; clock      ;
+; N/A   ; None         ; 11.200 ns  ; available_ticket[5]~reg0 ; available_ticket[5] ; clock      ;
+; N/A   ; None         ; 11.200 ns  ; available_ticket[3]~reg0 ; available_ticket[3] ; clock      ;
+; N/A   ; None         ; 11.100 ns  ; route[1]~reg0            ; route[1]            ; clock      ;
+; N/A   ; None         ; 11.000 ns  ; wanted_ticket[2]~reg0    ; wanted_ticket[2]    ; clock      ;
+; N/A   ; None         ; 11.000 ns  ; total_fare[13]~reg0      ; total_fare[13]      ; clock      ;
+; N/A   ; None         ; 11.000 ns  ; total_fare[6]~reg0       ; total_fare[6]       ; clock      ;
+; N/A   ; None         ; 11.000 ns  ; total_fare[0]~reg0       ; total_fare[0]       ; clock      ;
+; N/A   ; None         ; 11.000 ns  ; message_no[3]~reg0       ; message_no[3]       ; clock      ;
+; N/A   ; None         ; 10.900 ns  ; total_fare[14]~448       ; total_fare[15]      ; clock      ;
+; N/A   ; None         ; 10.900 ns  ; total_fare[14]~reg0      ; total_fare[14]      ; clock      ;
+; N/A   ; None         ; 10.900 ns  ; total_fare[12]~reg0      ; total_fare[12]      ; clock      ;
+; N/A   ; None         ; 10.900 ns  ; total_fare[9]~reg0       ; total_fare[9]       ; clock      ;
+; N/A   ; None         ; 10.900 ns  ; total_fare[4]~reg0       ; total_fare[4]       ; clock      ;
+; N/A   ; None         ; 10.900 ns  ; total_fare[1]~reg0       ; total_fare[1]       ; clock      ;
+; N/A   ; None         ; 10.900 ns  ; balance[14]~reg0         ; balance[14]         ; clock      ;
+; N/A   ; None         ; 10.900 ns  ; balance[11]~reg0         ; balance[11]         ; clock      ;
+; N/A   ; None         ; 10.900 ns  ; balance[8]~reg0          ; balance[8]          ; clock      ;
+; N/A   ; None         ; 10.800 ns  ; total_fare[11]~reg0      ; total_fare[11]      ; clock      ;
+; N/A   ; None         ; 10.800 ns  ; balance[15]~reg0         ; balance[15]         ; clock      ;
+; N/A   ; None         ; 10.700 ns  ; route[2]~reg0            ; route[2]            ; clock      ;
+; N/A   ; None         ; 10.700 ns  ; balance[9]~reg0          ; balance[9]          ; clock      ;
+; N/A   ; None         ; 10.700 ns  ; balance[4]~reg0          ; balance[4]          ; clock      ;
+; N/A   ; None         ; 10.000 ns  ; available_ticket[2]~reg0 ; available_ticket[2] ; clock      ;
+; N/A   ; None         ; 10.000 ns  ; available_ticket[0]~reg0 ; available_ticket[0] ; clock      ;
+; N/A   ; None         ; 10.000 ns  ; wanted_ticket[1]~reg0    ; wanted_ticket[1]    ; clock      ;
+; N/A   ; None         ; 10.000 ns  ; wanted_ticket[0]~reg0    ; wanted_ticket[0]    ; clock      ;
+; N/A   ; None         ; 9.900 ns   ; available_ticket[1]~reg0 ; available_ticket[1] ; clock      ;
+; N/A   ; None         ; 9.900 ns   ; wanted_ticket[3]~reg0    ; wanted_ticket[3]    ; clock      ;
+; N/A   ; None         ; 9.900 ns   ; total_fare[7]~reg0       ; total_fare[7]       ; clock      ;
+; N/A   ; None         ; 9.900 ns   ; total_fare[5]~reg0       ; total_fare[5]       ; clock      ;
+; N/A   ; None         ; 9.900 ns   ; total_fare[3]~reg0       ; total_fare[3]       ; clock      ;
+; N/A   ; None         ; 9.900 ns   ; balance[6]~reg0          ; balance[6]          ; clock      ;
+; N/A   ; None         ; 9.900 ns   ; balance[2]~reg0          ; balance[2]          ; clock      ;
+; N/A   ; None         ; 9.900 ns   ; balance[1]~reg0          ; balance[1]          ; clock      ;
+; N/A   ; None         ; 9.900 ns   ; message_no[2]~reg0       ; message_no[2]       ; clock      ;
+; N/A   ; None         ; 9.800 ns   ; ticket_out~reg0          ; ticket_out          ; clock      ;
+; N/A   ; None         ; 9.800 ns   ; balance[13]~reg0         ; balance[13]         ; clock      ;
+; N/A   ; None         ; 9.800 ns   ; balance[3]~reg0          ; balance[3]          ; clock      ;
+; N/A   ; None         ; 9.800 ns   ; balance[0]~reg0          ; balance[0]          ; clock      ;
+; N/A   ; None         ; 9.800 ns   ; message_no[0]~reg0       ; message_no[0]       ; clock      ;
+; N/A   ; None         ; 9.700 ns   ; total_fare[8]~reg0       ; total_fare[8]       ; clock      ;
+; N/A   ; None         ; 9.700 ns   ; total_fare[2]~reg0       ; total_fare[2]       ; clock      ;
+; N/A   ; None         ; 9.700 ns   ; balance[12]~reg0         ; balance[12]         ; clock      ;
+; N/A   ; None         ; 9.700 ns   ; balance[10]~reg0         ; balance[10]         ; clock      ;
+; N/A   ; None         ; 9.700 ns   ; balance[7]~reg0          ; balance[7]          ; clock      ;
+; N/A   ; None         ; 9.700 ns   ; balance[5]~reg0          ; balance[5]          ; clock      ;
+; N/A   ; None         ; 9.700 ns   ; message_no[1]~reg0       ; message_no[1]       ; clock      ;
+; N/A   ; None         ; 9.500 ns   ; route[0]~reg0            ; route[0]            ; clock      ;
+; N/A   ; None         ; 9.400 ns   ; route[3]~reg0            ; route[3]            ; clock      ;
++-------+--------------+------------+--------------------------+---------------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; th                                                                                                                                                               ;
++-----------------------------------------+-----------------------------------------------------+-----------+----------------+--------------------------+----------+
+; Minimum Slack                           ; Required th                                         ; Actual th ; From           ; To                       ; To Clock ;
++-----------------------------------------+-----------------------------------------------------+-----------+----------------+--------------------------+----------+
+; N/A                                     ; None                                                ; 0.600 ns  ; reset          ; available_ticket1[3]     ; clock    ;
+; N/A                                     ; None                                                ; 0.600 ns  ; reset          ; available_ticket1[5]     ; clock    ;
+; N/A                                     ; None                                                ; 0.600 ns  ; reset          ; available_ticket1[4]     ; clock    ;
+; N/A                                     ; None                                                ; 0.600 ns  ; reset          ; available_ticket1[1]     ; clock    ;
+; N/A                                     ; None                                                ; 0.600 ns  ; reset          ; available_ticket1[2]     ; clock    ;
+; N/A                                     ; None                                                ; 0.400 ns  ; reset          ; wanted_ticket[1]~reg0    ; clock    ;
+; N/A                                     ; None                                                ; 0.400 ns  ; reset          ; available_ticket6[3]     ; clock    ;
+; N/A                                     ; None                                                ; 0.400 ns  ; reset          ; available_ticket2[3]     ; clock    ;
+; N/A                                     ; None                                                ; 0.400 ns  ; reset          ; available_ticket6[5]     ; clock    ;
+; N/A                                     ; None                                                ; 0.400 ns  ; reset          ; available_ticket2[5]     ; clock    ;
+; N/A                                     ; None                                                ; 0.400 ns  ; reset          ; available_ticket6[4]     ; clock    ;
+; N/A                                     ; None                                                ; 0.400 ns  ; reset          ; available_ticket2[4]     ; clock    ;
+; N/A                                     ; None                                                ; 0.400 ns  ; reset          ; available_ticket6[1]     ; clock    ;
+; N/A                                     ; None                                                ; 0.400 ns  ; reset          ; available_ticket2[1]     ; clock    ;
+; N/A                                     ; None                                                ; 0.400 ns  ; reset          ; available_ticket6[2]     ; clock    ;
+; N/A                                     ; None                                                ; 0.400 ns  ; reset          ; available_ticket2[2]     ; clock    ;
+; N/A                                     ; None                                                ; 0.100 ns  ; reset          ; wanted_ticket[0]~reg0    ; clock    ;
+; N/A                                     ; None                                                ; 0.100 ns  ; reset          ; stateA                   ; clock    ;
+; N/A                                     ; None                                                ; 0.100 ns  ; reset          ; available_ticket1[0]     ; clock    ;
+; N/A                                     ; None                                                ; 0.100 ns  ; reset          ; total_fare[14]~448       ; clock    ;
+; N/A                                     ; None                                                ; 0.000 ns  ; reset          ; message_no[2]~reg0       ; clock    ;
+; N/A                                     ; None                                                ; 0.000 ns  ; reset          ; stateD                   ; clock    ;
+; N/A                                     ; None                                                ; 0.000 ns  ; reset          ; stateE                   ; clock    ;
+; N/A                                     ; None                                                ; 0.000 ns  ; reset          ; total_fare[0]~reg0       ; clock    ;
+; N/A                                     ; None                                                ; 0.000 ns  ; reset          ; total_fare[5]~reg0       ; clock    ;
+; N/A                                     ; None                                                ; 0.000 ns  ; reset          ; wanted_ticket[2]~reg0    ; clock    ;
+; N/A                                     ; None                                                ; 0.000 ns  ; reset          ; route[0]~reg0            ; clock    ;
+; N/A                                     ; None                                                ; 0.000 ns  ; reset          ; available_ticket4[3]     ; clock    ;
+; N/A                                     ; None                                                ; 0.000 ns  ; reset          ; available_ticket4[5]     ; clock    ;
+; N/A                                     ; None                                                ; 0.000 ns  ; reset          ; available_ticket4[4]     ; clock    ;
+; N/A                                     ; None                                                ; 0.000 ns  ; reset          ; available_ticket4[1]     ; clock    ;
+; N/A                                     ; None                                                ; 0.000 ns  ; reset          ; available_ticket4[2]     ; clock    ;
+; N/A                                     ; None                                                ; 0.000 ns  ; reset          ; stateB                   ; clock    ;
+; N/A                                     ; None                                                ; -0.100 ns ; reset          ; total_fare[3]~reg0       ; clock    ;
+; N/A                                     ; None                                                ; -0.100 ns ; reset          ; total_fare[7]~reg0       ; clock    ;
+; N/A                                     ; None                                                ; -0.100 ns ; reset          ; total_fare[10]~reg0      ; clock    ;
+; N/A                                     ; None                                                ; -0.100 ns ; reset          ; wanted_ticket[3]~reg0    ; clock    ;
+; N/A                                     ; None                                                ; -0.100 ns ; reset          ; available_ticket6[0]     ; clock    ;
+; N/A                                     ; None                                                ; -0.100 ns ; reset          ; available_ticket2[0]     ; clock    ;
+; N/A                                     ; None                                                ; -0.100 ns ; reset          ; available_ticket7[3]     ; clock    ;
+; N/A                                     ; None                                                ; -0.100 ns ; reset          ; available_ticket7[5]     ; clock    ;
+; N/A                                     ; None                                                ; -0.100 ns ; reset          ; available_ticket7[4]     ; clock    ;
+; N/A                                     ; None                                                ; -0.100 ns ; reset          ; available_ticket7[1]     ; clock    ;
+; N/A                                     ; None                                                ; -0.100 ns ; reset          ; available_ticket7[2]     ; clock    ;
+; N/A                                     ; None                                                ; -0.200 ns ; exit           ; ticket_out~reg0          ; clock    ;
+; N/A                                     ; None                                                ; -0.200 ns ; reset          ; ticket_out~reg0          ; clock    ;
+; N/A                                     ; None                                                ; -0.200 ns ; reset          ; total_fare[4]~reg0       ; clock    ;
+; N/A                                     ; None                                                ; -0.200 ns ; reset          ; total_fare[6]~reg0       ; clock    ;
+; N/A                                     ; None                                                ; -0.200 ns ; reset          ; total_fare[11]~reg0      ; clock    ;
+; N/A                                     ; None                                                ; -0.200 ns ; reset          ; total_fare[13]~reg0      ; clock    ;
+; N/A                                     ; None                                                ; -0.200 ns ; reset          ; route[1]~reg0            ; clock    ;
+; N/A                                     ; None                                                ; -0.200 ns ; reset          ; route[2]~reg0            ; clock    ;
+; N/A                                     ; None                                                ; -0.200 ns ; reset          ; route[3]~reg0            ; clock    ;
+; N/A                                     ; None                                                ; -0.200 ns ; reset          ; available_ticket8[3]     ; clock    ;
+; N/A                                     ; None                                                ; -0.200 ns ; reset          ; available_ticket5[3]     ; clock    ;
+; N/A                                     ; None                                                ; -0.200 ns ; reset          ; available_ticket3[3]     ; clock    ;
+; N/A                                     ; None                                                ; -0.200 ns ; reset          ; available_ticket8[5]     ; clock    ;
+; N/A                                     ; None                                                ; -0.200 ns ; reset          ; available_ticket5[5]     ; clock    ;
+; N/A                                     ; None                                                ; -0.200 ns ; reset          ; available_ticket3[5]     ; clock    ;
+; N/A                                     ; None                                                ; -0.200 ns ; reset          ; available_ticket5[4]     ; clock    ;
+; N/A                                     ; None                                                ; -0.200 ns ; reset          ; available_ticket8[4]     ; clock    ;
+; N/A                                     ; None                                                ; -0.200 ns ; reset          ; available_ticket3[4]     ; clock    ;
+; N/A                                     ; None                                                ; -0.200 ns ; reset          ; available_ticket8[1]     ; clock    ;
+; N/A                                     ; None                                                ; -0.200 ns ; reset          ; available_ticket5[1]     ; clock    ;
+; N/A                                     ; None                                                ; -0.200 ns ; reset          ; available_ticket3[1]     ; clock    ;
+; N/A                                     ; None                                                ; -0.200 ns ; reset          ; available_ticket5[2]     ; clock    ;
+; N/A                                     ; None                                                ; -0.200 ns ; reset          ; available_ticket8[2]     ; clock    ;
+; N/A                                     ; None                                                ; -0.200 ns ; reset          ; available_ticket3[2]     ; clock    ;
+; N/A                                     ; None                                                ; -0.300 ns ; reset          ; total_fare[12]~reg0      ; clock    ;
+; N/A                                     ; None                                                ; -0.300 ns ; reset          ; available_ticket9[3]     ; clock    ;
+; N/A                                     ; None                                                ; -0.300 ns ; reset          ; available_ticket9[5]     ; clock    ;
+; N/A                                     ; None                                                ; -0.300 ns ; reset          ; available_ticket9[4]     ; clock    ;
+; N/A                                     ; None                                                ; -0.300 ns ; reset          ; available_ticket9[1]     ; clock    ;
+; N/A                                     ; None                                                ; -0.300 ns ; reset          ; available_ticket9[2]     ; clock    ;
+; N/A                                     ; None                                                ; -0.400 ns ; exit           ; stateA                   ; clock    ;
+; N/A                                     ; None                                                ; -0.400 ns ; reset          ; message_no[1]~reg0       ; clock    ;
+; N/A                                     ; None                                                ; -0.400 ns ; reset          ; total_fare[2]~reg0       ; clock    ;
+; N/A                                     ; None                                                ; -0.400 ns ; reset          ; total_fare[8]~reg0       ; clock    ;
+; N/A                                     ; None                                                ; -0.400 ns ; reset          ; total_fare[9]~reg0       ; clock    ;
+; N/A                                     ; None                                                ; -0.400 ns ; reset          ; total_fare[14]~reg0      ; clock    ;
+; N/A                                     ; None                                                ; -0.400 ns ; reset          ; stateC                   ; clock    ;
+; N/A                                     ; None                                                ; -0.500 ns ; reset          ; total_fare[1]~reg0       ; clock    ;
+; N/A                                     ; None                                                ; -0.500 ns ; reset          ; available_ticket[1]~reg0 ; clock    ;
+; N/A                                     ; None                                                ; -0.500 ns ; reset          ; available_ticket4[0]     ; clock    ;
+; N/A                                     ; None                                                ; -0.600 ns ; reset          ; available_ticket[2]~reg0 ; clock    ;
+; N/A                                     ; None                                                ; -0.600 ns ; reset          ; available_ticket7[0]     ; clock    ;
+; N/A                                     ; None                                                ; -0.700 ns ; reset          ; available_ticket[4]~reg0 ; clock    ;
+; N/A                                     ; None                                                ; -0.700 ns ; reset          ; available_ticket5[0]     ; clock    ;
+; N/A                                     ; None                                                ; -0.700 ns ; reset          ; available_ticket8[0]     ; clock    ;
+; N/A                                     ; None                                                ; -0.700 ns ; reset          ; available_ticket3[0]     ; clock    ;
+; N/A                                     ; None                                                ; -0.800 ns ; reset          ; available_ticket[0]~reg0 ; clock    ;
+; N/A                                     ; None                                                ; -0.800 ns ; reset          ; available_ticket[3]~reg0 ; clock    ;
+; N/A                                     ; None                                                ; -0.800 ns ; reset          ; available_ticket[5]~reg0 ; clock    ;
+; N/A                                     ; None                                                ; -0.800 ns ; reset          ; available_ticket9[0]     ; clock    ;
+; N/A                                     ; None                                                ; -1.600 ns ; digit[1]       ; wanted_ticket[1]~reg0    ; clock    ;
+; N/A                                     ; None                                                ; -1.800 ns ; digit[1]       ; wanted_ticket[2]~reg0    ; clock    ;
+; N/A                                     ; None                                                ; -1.900 ns ; reset          ; message_no[3]~reg0       ; clock    ;
+; N/A                                     ; None                                                ; -2.000 ns ; exit           ; message_no[2]~reg0       ; clock    ;
+; N/A                                     ; None                                                ; -2.000 ns ; exit           ; stateD                   ; clock    ;
+; N/A                                     ; None                                                ; -2.000 ns ; exit           ; stateE                   ; clock    ;
+; N/A                                     ; None                                                ; -2.000 ns ; exit           ; total_fare[5]~reg0       ; clock    ;
+; N/A                                     ; None                                                ; -2.100 ns ; exit           ; total_fare[0]~reg0       ; clock    ;
+; N/A                                     ; None                                                ; -2.100 ns ; exit           ; total_fare[3]~reg0       ; clock    ;
+; N/A                                     ; None                                                ; -2.100 ns ; exit           ; total_fare[7]~reg0       ; clock    ;
+; N/A                                     ; None                                                ; -2.100 ns ; exit           ; wanted_ticket[1]~reg0    ; clock    ;
+; N/A                                     ; None                                                ; -2.200 ns ; exit           ; total_fare[6]~reg0       ; clock    ;
+; N/A                                     ; None                                                ; -2.300 ns ; exit           ; wanted_ticket[3]~reg0    ; clock    ;
+; N/A                                     ; None                                                ; -2.300 ns ; exit           ; route[2]~reg0            ; clock    ;
+; N/A                                     ; None                                                ; -2.300 ns ; exit           ; route[3]~reg0            ; clock    ;
+; N/A                                     ; None                                                ; -2.400 ns ; exit           ; message_no[3]~reg0       ; clock    ;
+; N/A                                     ; None                                                ; -2.400 ns ; exit           ; total_fare[13]~reg0      ; clock    ;
+; N/A                                     ; None                                                ; -2.400 ns ; exit           ; wanted_ticket[0]~reg0    ; clock    ;
+; N/A                                     ; None                                                ; -2.400 ns ; exit           ; stateC                   ; clock    ;
+; N/A                                     ; None                                                ; -2.400 ns ; reset          ; message_no[0]~reg0       ; clock    ;
+; N/A                                     ; None                                                ; -2.500 ns ; exit           ; total_fare[1]~reg0       ; clock    ;
+; N/A                                     ; None                                                ; -2.500 ns ; exit           ; total_fare[8]~reg0       ; clock    ;
+; N/A                                     ; None                                                ; -2.500 ns ; exit           ; total_fare[12]~reg0      ; clock    ;
+; N/A                                     ; None                                                ; -2.500 ns ; exit           ; stateB                   ; clock    ;
+; N/A                                     ; None                                                ; -2.600 ns ; exit           ; total_fare[9]~reg0       ; clock    ;
+; N/A                                     ; None                                                ; -2.600 ns ; exit           ; total_fare[14]~reg0      ; clock    ;
+; N/A                                     ; None                                                ; -2.600 ns ; exit           ; wanted_ticket[2]~reg0    ; clock    ;
+; N/A                                     ; None                                                ; -2.700 ns ; reset          ; balance[3]~reg0          ; clock    ;
+; N/A                                     ; None                                                ; -2.700 ns ; reset          ; balance[4]~reg0          ; clock    ;
+; N/A                                     ; None                                                ; -2.700 ns ; reset          ; balance[14]~reg0         ; clock    ;
+; N/A                                     ; None                                                ; -3.100 ns ; confirm        ; message_no[1]~reg0       ; clock    ;
+; N/A                                     ; None                                                ; -3.500 ns ; TC_balance[7]  ; balance[7]~reg0          ; clock    ;
+; N/A                                     ; None                                                ; -3.600 ns ; digit[1]       ; route[1]~reg0            ; clock    ;
+; N/A                                     ; None                                                ; -3.600 ns ; exit           ; total_fare[2]~reg0       ; clock    ;
+; N/A                                     ; None                                                ; -3.700 ns ; exit           ; total_fare[11]~reg0      ; clock    ;
+; N/A                                     ; None                                                ; -3.800 ns ; exit           ; total_fare[10]~reg0      ; clock    ;
+; N/A                                     ; None                                                ; -3.900 ns ; digit[1]       ; wanted_ticket[0]~reg0    ; clock    ;
+; N/A                                     ; None                                                ; -3.900 ns ; exit           ; total_fare[4]~reg0       ; clock    ;
+; N/A                                     ; None                                                ; -3.900 ns ; exit           ; available_ticket[5]~reg0 ; clock    ;
+; N/A                                     ; None                                                ; -3.900 ns ; confirm        ; message_no[2]~reg0       ; clock    ;
+; N/A                                     ; None                                                ; -3.900 ns ; confirm        ; stateD                   ; clock    ;
+; N/A                                     ; None                                                ; -3.900 ns ; confirm        ; stateE                   ; clock    ;
+; N/A                                     ; None                                                ; -4.000 ns ; TC_balance[13] ; balance[13]~reg0         ; clock    ;
+; N/A                                     ; None                                                ; -4.100 ns ; TC_balance[10] ; balance[10]~reg0         ; clock    ;
+; N/A                                     ; None                                                ; -4.100 ns ; exit           ; message_no[0]~reg0       ; clock    ;
+; N/A                                     ; None                                                ; -4.200 ns ; TC_balance[14] ; balance[14]~reg0         ; clock    ;
+; N/A                                     ; None                                                ; -4.200 ns ; exit           ; route[0]~reg0            ; clock    ;
+; N/A                                     ; None                                                ; -4.200 ns ; reset          ; balance[7]~reg0          ; clock    ;
+; N/A                                     ; None                                                ; -4.200 ns ; reset          ; balance[11]~reg0         ; clock    ;
+; N/A                                     ; None                                                ; -4.300 ns ; reset          ; balance[0]~reg0          ; clock    ;
+; N/A                                     ; None                                                ; -4.300 ns ; reset          ; balance[1]~reg0          ; clock    ;
+; N/A                                     ; None                                                ; -4.300 ns ; reset          ; balance[2]~reg0          ; clock    ;
+; N/A                                     ; None                                                ; -4.300 ns ; reset          ; balance[15]~reg0         ; clock    ;
+; N/A                                     ; None                                                ; -4.400 ns ; exit           ; message_no[1]~reg0       ; clock    ;
+; N/A                                     ; None                                                ; -4.400 ns ; reset          ; balance[5]~reg0          ; clock    ;
+; N/A                                     ; None                                                ; -4.400 ns ; reset          ; balance[6]~reg0          ; clock    ;
+; N/A                                     ; None                                                ; -4.400 ns ; reset          ; balance[8]~reg0          ; clock    ;
+; N/A                                     ; None                                                ; -4.400 ns ; reset          ; balance[9]~reg0          ; clock    ;
+; N/A                                     ; None                                                ; -4.400 ns ; reset          ; balance[10]~reg0         ; clock    ;
+; N/A                                     ; None                                                ; -4.400 ns ; reset          ; balance[12]~reg0         ; clock    ;
+; N/A                                     ; None                                                ; -4.400 ns ; reset          ; balance[13]~reg0         ; clock    ;
+; N/A                                     ; None                                                ; -4.500 ns ; TC_balance[11] ; balance[11]~reg0         ; clock    ;
+; N/A                                     ; None                                                ; -4.600 ns ; TC_balance[12] ; balance[12]~reg0         ; clock    ;
+; N/A                                     ; None                                                ; -4.600 ns ; TC_balance[8]  ; balance[8]~reg0          ; clock    ;
+; N/A                                     ; None                                                ; -4.700 ns ; exit           ; balance[5]~reg0          ; clock    ;
+; N/A                                     ; None                                                ; -4.700 ns ; exit           ; balance[6]~reg0          ; clock    ;
+; N/A                                     ; None                                                ; -4.700 ns ; exit           ; balance[13]~reg0         ; clock    ;
+; N/A                                     ; None                                                ; -4.800 ns ; TC_balance[15] ; balance[15]~reg0         ; clock    ;
+; N/A                                     ; None                                                ; -4.800 ns ; TC_balance[9]  ; balance[9]~reg0          ; clock    ;
+; N/A                                     ; None                                                ; -4.800 ns ; TC_balance[1]  ; balance[1]~reg0          ; clock    ;
+; N/A                                     ; None                                                ; -4.800 ns ; TC_balance[0]  ; balance[0]~reg0          ; clock    ;
+; N/A                                     ; None                                                ; -4.800 ns ; digit[1]       ; stateA                   ; clock    ;
+; N/A                                     ; None                                                ; -4.800 ns ; digit[1]       ; route[0]~reg0            ; clock    ;
+; N/A                                     ; None                                                ; -4.900 ns ; TC_balance[4]  ; balance[4]~reg0          ; clock    ;
+; N/A                                     ; None                                                ; -4.900 ns ; digit[1]       ; wanted_ticket[3]~reg0    ; clock    ;
+; N/A                                     ; None                                                ; -4.900 ns ; digit[3]       ; wanted_ticket[3]~reg0    ; clock    ;
+; N/A                                     ; None                                                ; -5.000 ns ; TC_balance[6]  ; balance[6]~reg0          ; clock    ;
+; N/A                                     ; None                                                ; -5.000 ns ; exit           ; available_ticket[1]~reg0 ; clock    ;
+; N/A                                     ; None                                                ; -5.100 ns ; TC_balance[5]  ; balance[5]~reg0          ; clock    ;
+; N/A                                     ; None                                                ; -5.100 ns ; TC_balance[2]  ; balance[2]~reg0          ; clock    ;
+; N/A                                     ; None                                                ; -5.100 ns ; next           ; stateB                   ; clock    ;
+; N/A                                     ; None                                                ; -5.100 ns ; exit           ; total_fare[14]~448       ; clock    ;
+; N/A                                     ; None                                                ; -5.100 ns ; cancel         ; stateD                   ; clock    ;
+; N/A                                     ; None                                                ; -5.100 ns ; cancel         ; stateE                   ; clock    ;
+; N/A                                     ; None                                                ; -5.200 ns ; exit           ; available_ticket[2]~reg0 ; clock    ;
+; N/A                                     ; None                                                ; -5.200 ns ; exit           ; available_ticket[4]~reg0 ; clock    ;
+; N/A                                     ; None                                                ; -5.200 ns ; cancel         ; stateB                   ; clock    ;
+; N/A                                     ; None                                                ; -5.300 ns ; exit           ; available_ticket[3]~reg0 ; clock    ;
+; N/A                                     ; None                                                ; -5.400 ns ; confirm        ; message_no[3]~reg0       ; clock    ;
+; N/A                                     ; None                                                ; -5.500 ns ; digit[3]       ; stateA                   ; clock    ;
+; N/A                                     ; None                                                ; -5.500 ns ; exit           ; route[1]~reg0            ; clock    ;
+; N/A                                     ; None                                                ; -5.600 ns ; cancel         ; message_no[2]~reg0       ; clock    ;
+; N/A                                     ; None                                                ; -5.800 ns ; digit[3]       ; wanted_ticket[2]~reg0    ; clock    ;
+; N/A                                     ; None                                                ; -5.900 ns ; digit[1]       ; route[2]~reg0            ; clock    ;
+; N/A                                     ; None                                                ; -5.900 ns ; confirm        ; message_no[0]~reg0       ; clock    ;
+; N/A                                     ; None                                                ; -6.200 ns ; TC_balance[7]  ; balance[8]~reg0          ; clock    ;
+; N/A                                     ; None                                                ; -6.200 ns ; exit           ; balance[8]~reg0          ; clock    ;
+; N/A                                     ; None                                                ; -6.200 ns ; exit           ; balance[9]~reg0          ; clock    ;
+; N/A                                     ; None                                                ; -6.200 ns ; exit           ; balance[10]~reg0         ; clock    ;
+; N/A                                     ; None                                                ; -6.200 ns ; exit           ; balance[12]~reg0         ; clock    ;
+; N/A                                     ; None                                                ; -6.300 ns ; digit[1]       ; message_no[0]~reg0       ; clock    ;
+; N/A                                     ; None                                                ; -6.300 ns ; exit           ; balance[0]~reg0          ; clock    ;
+; N/A                                     ; None                                                ; -6.300 ns ; exit           ; balance[1]~reg0          ; clock    ;
+; N/A                                     ; None                                                ; -6.300 ns ; exit           ; balance[2]~reg0          ; clock    ;
+; N/A                                     ; None                                                ; -6.300 ns ; exit           ; balance[3]~reg0          ; clock    ;
+; N/A                                     ; None                                                ; -6.300 ns ; exit           ; balance[4]~reg0          ; clock    ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;           ;                ;                          ;          ;
++-----------------------------------------+-----------------------------------------------------+-----------+----------------+--------------------------+----------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Classic Timing Analyzer
+    Info: Version 8.1 Build 163 10/28/2008 SJ Web Edition
+    Info: Processing started: Sat Nov 28 11:46:07 2020
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off ets_v2 -c ets_v2
+Info: Started post-fitting delay annotation
+Info: Delay annotation completed successfully
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "clock" is an undefined clock
+Info: Clock "clock" has Internal fmax of 12.84 MHz between source register "wanted_ticket[0]~reg0" and destination register "available_ticket6[0]" (period= 77.9 ns)
+    Info: + Longest register to register delay is 75.700 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC8_E15; Fanout = 6; REG Node = 'wanted_ticket[0]~reg0'
+        Info: 2: + IC(0.600 ns) + CELL(1.900 ns) = 2.500 ns; Loc. = LC4_E15; Fanout = 1; COMB Node = 'Selector7~270'
+        Info: 3: + IC(0.600 ns) + CELL(1.900 ns) = 5.000 ns; Loc. = LC5_E15; Fanout = 1; COMB Node = 'Selector7~271'
+        Info: 4: + IC(0.600 ns) + CELL(1.900 ns) = 7.500 ns; Loc. = LC7_E15; Fanout = 1; COMB Node = 'Selector7~272'
+        Info: 5: + IC(1.800 ns) + CELL(1.900 ns) = 11.200 ns; Loc. = LC4_E13; Fanout = 1; COMB Node = 'Selector7~273'
+        Info: 6: + IC(0.600 ns) + CELL(1.900 ns) = 13.700 ns; Loc. = LC5_E13; Fanout = 1; COMB Node = 'Selector7~274'
+        Info: 7: + IC(0.600 ns) + CELL(1.900 ns) = 16.200 ns; Loc. = LC6_E13; Fanout = 1; COMB Node = 'Selector7~275'
+        Info: 8: + IC(0.600 ns) + CELL(1.900 ns) = 18.700 ns; Loc. = LC1_E13; Fanout = 1; COMB Node = 'Selector7~276'
+        Info: 9: + IC(2.800 ns) + CELL(1.400 ns) = 22.900 ns; Loc. = LC4_C13; Fanout = 27; COMB Node = 'Selector7~277'
+        Info: 10: + IC(3.200 ns) + CELL(1.900 ns) = 28.000 ns; Loc. = LC1_A14; Fanout = 1; COMB Node = 'LessThan0~578'
+        Info: 11: + IC(0.600 ns) + CELL(1.900 ns) = 30.500 ns; Loc. = LC3_A14; Fanout = 1; COMB Node = 'LessThan0~579'
+        Info: 12: + IC(0.600 ns) + CELL(1.900 ns) = 33.000 ns; Loc. = LC5_A14; Fanout = 1; COMB Node = 'LessThan0~580'
+        Info: 13: + IC(0.600 ns) + CELL(1.400 ns) = 35.000 ns; Loc. = LC2_A14; Fanout = 4; COMB Node = 'LessThan0~581'
+        Info: 14: + IC(1.800 ns) + CELL(1.400 ns) = 38.200 ns; Loc. = LC2_A15; Fanout = 2; COMB Node = 'Mux6~365'
+        Info: 15: + IC(0.600 ns) + CELL(1.400 ns) = 40.200 ns; Loc. = LC6_A15; Fanout = 16; COMB Node = 'Mux6~366'
+        Info: 16: + IC(0.600 ns) + CELL(1.900 ns) = 42.700 ns; Loc. = LC7_A15; Fanout = 1; COMB Node = 'Mux6~370'
+        Info: 17: + IC(0.600 ns) + CELL(1.900 ns) = 45.200 ns; Loc. = LC4_A15; Fanout = 7; COMB Node = 'Mux6~371'
+        Info: 18: + IC(0.600 ns) + CELL(1.900 ns) = 47.700 ns; Loc. = LC5_A15; Fanout = 2; COMB Node = 'LessThan1~1205'
+        Info: 19: + IC(1.900 ns) + CELL(1.400 ns) = 51.000 ns; Loc. = LC2_A13; Fanout = 2; COMB Node = 'LessThan1~1206'
+        Info: 20: + IC(0.600 ns) + CELL(1.400 ns) = 53.000 ns; Loc. = LC3_A13; Fanout = 2; COMB Node = 'LessThan1~1207'
+        Info: 21: + IC(0.600 ns) + CELL(1.400 ns) = 55.000 ns; Loc. = LC6_A13; Fanout = 2; COMB Node = 'LessThan1~1208'
+        Info: 22: + IC(0.600 ns) + CELL(1.400 ns) = 57.000 ns; Loc. = LC1_A13; Fanout = 1; COMB Node = 'LessThan1~1209'
+        Info: 23: + IC(3.000 ns) + CELL(1.400 ns) = 61.400 ns; Loc. = LC1_D13; Fanout = 2; COMB Node = 'LessThan1~1210'
+        Info: 24: + IC(0.600 ns) + CELL(1.400 ns) = 63.400 ns; Loc. = LC3_D13; Fanout = 1; COMB Node = 'LessThan1~1247'
+        Info: 25: + IC(0.000 ns) + CELL(1.300 ns) = 64.700 ns; Loc. = LC4_D13; Fanout = 5; COMB Node = 'LessThan1~1234'
+        Info: 26: + IC(2.700 ns) + CELL(1.400 ns) = 68.800 ns; Loc. = LC1_F13; Fanout = 15; COMB Node = 'available_ticket3~86'
+        Info: 27: + IC(3.400 ns) + CELL(1.900 ns) = 74.100 ns; Loc. = LC2_F2; Fanout = 6; COMB Node = 'available_ticket6~85'
+        Info: 28: + IC(0.600 ns) + CELL(1.000 ns) = 75.700 ns; Loc. = LC3_F2; Fanout = 1; REG Node = 'available_ticket6[0]'
+        Info: Total cell delay = 44.300 ns ( 58.52 % )
+        Info: Total interconnect delay = 31.400 ns ( 41.48 % )
+    Info: - Smallest clock skew is 0.000 ns
+        Info: + Shortest clock path from clock "clock" to destination register is 3.900 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.900 ns) = 1.900 ns; Loc. = PIN_55; Fanout = 110; CLK Node = 'clock'
+            Info: 2: + IC(2.000 ns) + CELL(0.000 ns) = 3.900 ns; Loc. = LC3_F2; Fanout = 1; REG Node = 'available_ticket6[0]'
+            Info: Total cell delay = 1.900 ns ( 48.72 % )
+            Info: Total interconnect delay = 2.000 ns ( 51.28 % )
+        Info: - Longest clock path from clock "clock" to source register is 3.900 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.900 ns) = 1.900 ns; Loc. = PIN_55; Fanout = 110; CLK Node = 'clock'
+            Info: 2: + IC(2.000 ns) + CELL(0.000 ns) = 3.900 ns; Loc. = LC8_E15; Fanout = 6; REG Node = 'wanted_ticket[0]~reg0'
+            Info: Total cell delay = 1.900 ns ( 48.72 % )
+            Info: Total interconnect delay = 2.000 ns ( 51.28 % )
+    Info: + Micro clock to output delay of source is 0.900 ns
+    Info: + Micro setup delay of destination is 1.300 ns
+Info: tsu for register "available_ticket6[0]" (data pin = "digit[8]", clock pin = "clock") is 79.700 ns
+    Info: + Longest pin to register delay is 82.300 ns
+        Info: 1: + IC(0.000 ns) + CELL(3.100 ns) = 3.100 ns; Loc. = PIN_135; Fanout = 7; PIN Node = 'digit[8]'
+        Info: 2: + IC(4.100 ns) + CELL(1.900 ns) = 9.100 ns; Loc. = LC2_E15; Fanout = 1; COMB Node = 'Selector7~269'
+        Info: 3: + IC(0.600 ns) + CELL(1.900 ns) = 11.600 ns; Loc. = LC5_E15; Fanout = 1; COMB Node = 'Selector7~271'
+        Info: 4: + IC(0.600 ns) + CELL(1.900 ns) = 14.100 ns; Loc. = LC7_E15; Fanout = 1; COMB Node = 'Selector7~272'
+        Info: 5: + IC(1.800 ns) + CELL(1.900 ns) = 17.800 ns; Loc. = LC4_E13; Fanout = 1; COMB Node = 'Selector7~273'
+        Info: 6: + IC(0.600 ns) + CELL(1.900 ns) = 20.300 ns; Loc. = LC5_E13; Fanout = 1; COMB Node = 'Selector7~274'
+        Info: 7: + IC(0.600 ns) + CELL(1.900 ns) = 22.800 ns; Loc. = LC6_E13; Fanout = 1; COMB Node = 'Selector7~275'
+        Info: 8: + IC(0.600 ns) + CELL(1.900 ns) = 25.300 ns; Loc. = LC1_E13; Fanout = 1; COMB Node = 'Selector7~276'
+        Info: 9: + IC(2.800 ns) + CELL(1.400 ns) = 29.500 ns; Loc. = LC4_C13; Fanout = 27; COMB Node = 'Selector7~277'
+        Info: 10: + IC(3.200 ns) + CELL(1.900 ns) = 34.600 ns; Loc. = LC1_A14; Fanout = 1; COMB Node = 'LessThan0~578'
+        Info: 11: + IC(0.600 ns) + CELL(1.900 ns) = 37.100 ns; Loc. = LC3_A14; Fanout = 1; COMB Node = 'LessThan0~579'
+        Info: 12: + IC(0.600 ns) + CELL(1.900 ns) = 39.600 ns; Loc. = LC5_A14; Fanout = 1; COMB Node = 'LessThan0~580'
+        Info: 13: + IC(0.600 ns) + CELL(1.400 ns) = 41.600 ns; Loc. = LC2_A14; Fanout = 4; COMB Node = 'LessThan0~581'
+        Info: 14: + IC(1.800 ns) + CELL(1.400 ns) = 44.800 ns; Loc. = LC2_A15; Fanout = 2; COMB Node = 'Mux6~365'
+        Info: 15: + IC(0.600 ns) + CELL(1.400 ns) = 46.800 ns; Loc. = LC6_A15; Fanout = 16; COMB Node = 'Mux6~366'
+        Info: 16: + IC(0.600 ns) + CELL(1.900 ns) = 49.300 ns; Loc. = LC7_A15; Fanout = 1; COMB Node = 'Mux6~370'
+        Info: 17: + IC(0.600 ns) + CELL(1.900 ns) = 51.800 ns; Loc. = LC4_A15; Fanout = 7; COMB Node = 'Mux6~371'
+        Info: 18: + IC(0.600 ns) + CELL(1.900 ns) = 54.300 ns; Loc. = LC5_A15; Fanout = 2; COMB Node = 'LessThan1~1205'
+        Info: 19: + IC(1.900 ns) + CELL(1.400 ns) = 57.600 ns; Loc. = LC2_A13; Fanout = 2; COMB Node = 'LessThan1~1206'
+        Info: 20: + IC(0.600 ns) + CELL(1.400 ns) = 59.600 ns; Loc. = LC3_A13; Fanout = 2; COMB Node = 'LessThan1~1207'
+        Info: 21: + IC(0.600 ns) + CELL(1.400 ns) = 61.600 ns; Loc. = LC6_A13; Fanout = 2; COMB Node = 'LessThan1~1208'
+        Info: 22: + IC(0.600 ns) + CELL(1.400 ns) = 63.600 ns; Loc. = LC1_A13; Fanout = 1; COMB Node = 'LessThan1~1209'
+        Info: 23: + IC(3.000 ns) + CELL(1.400 ns) = 68.000 ns; Loc. = LC1_D13; Fanout = 2; COMB Node = 'LessThan1~1210'
+        Info: 24: + IC(0.600 ns) + CELL(1.400 ns) = 70.000 ns; Loc. = LC3_D13; Fanout = 1; COMB Node = 'LessThan1~1247'
+        Info: 25: + IC(0.000 ns) + CELL(1.300 ns) = 71.300 ns; Loc. = LC4_D13; Fanout = 5; COMB Node = 'LessThan1~1234'
+        Info: 26: + IC(2.700 ns) + CELL(1.400 ns) = 75.400 ns; Loc. = LC1_F13; Fanout = 15; COMB Node = 'available_ticket3~86'
+        Info: 27: + IC(3.400 ns) + CELL(1.900 ns) = 80.700 ns; Loc. = LC2_F2; Fanout = 6; COMB Node = 'available_ticket6~85'
+        Info: 28: + IC(0.600 ns) + CELL(1.000 ns) = 82.300 ns; Loc. = LC3_F2; Fanout = 1; REG Node = 'available_ticket6[0]'
+        Info: Total cell delay = 47.400 ns ( 57.59 % )
+        Info: Total interconnect delay = 34.900 ns ( 42.41 % )
+    Info: + Micro setup delay of destination is 1.300 ns
+    Info: - Shortest clock path from clock "clock" to destination register is 3.900 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.900 ns) = 1.900 ns; Loc. = PIN_55; Fanout = 110; CLK Node = 'clock'
+        Info: 2: + IC(2.000 ns) + CELL(0.000 ns) = 3.900 ns; Loc. = LC3_F2; Fanout = 1; REG Node = 'available_ticket6[0]'
+        Info: Total cell delay = 1.900 ns ( 48.72 % )
+        Info: Total interconnect delay = 2.000 ns ( 51.28 % )
+Info: tco from clock "clock" to destination pin "available_ticket[4]" through register "available_ticket[4]~reg0" is 12.500 ns
+    Info: + Longest clock path from clock "clock" to source register is 3.900 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.900 ns) = 1.900 ns; Loc. = PIN_55; Fanout = 110; CLK Node = 'clock'
+        Info: 2: + IC(2.000 ns) + CELL(0.000 ns) = 3.900 ns; Loc. = LC1_F16; Fanout = 5; REG Node = 'available_ticket[4]~reg0'
+        Info: Total cell delay = 1.900 ns ( 48.72 % )
+        Info: Total interconnect delay = 2.000 ns ( 51.28 % )
+    Info: + Micro clock to output delay of source is 0.900 ns
+    Info: + Longest register to pin delay is 7.700 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC1_F16; Fanout = 5; REG Node = 'available_ticket[4]~reg0'
+        Info: 2: + IC(3.800 ns) + CELL(3.900 ns) = 7.700 ns; Loc. = PIN_109; Fanout = 0; PIN Node = 'available_ticket[4]'
+        Info: Total cell delay = 3.900 ns ( 50.65 % )
+        Info: Total interconnect delay = 3.800 ns ( 49.35 % )
+Info: th for register "available_ticket1[3]" (data pin = "reset", clock pin = "clock") is 0.600 ns
+    Info: + Longest clock path from clock "clock" to destination register is 3.900 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.900 ns) = 1.900 ns; Loc. = PIN_55; Fanout = 110; CLK Node = 'clock'
+        Info: 2: + IC(2.000 ns) + CELL(0.000 ns) = 3.900 ns; Loc. = LC2_F24; Fanout = 1; REG Node = 'available_ticket1[3]'
+        Info: Total cell delay = 1.900 ns ( 48.72 % )
+        Info: Total interconnect delay = 2.000 ns ( 51.28 % )
+    Info: + Micro hold delay of destination is 1.400 ns
+    Info: - Shortest pin to register delay is 4.700 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.900 ns) = 1.900 ns; Loc. = PIN_124; Fanout = 106; PIN Node = 'reset'
+        Info: 2: + IC(1.900 ns) + CELL(0.900 ns) = 4.700 ns; Loc. = LC2_F24; Fanout = 1; REG Node = 'available_ticket1[3]'
+        Info: Total cell delay = 2.800 ns ( 59.57 % )
+        Info: Total interconnect delay = 1.900 ns ( 40.43 % )
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 155 megabytes
+    Info: Processing ended: Sat Nov 28 11:46:07 2020
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:00
+
+
